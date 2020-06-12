@@ -1,18 +1,12 @@
-<!DOCTYPE <!DOCTYPE html>
-<html class="no-js">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Django</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-        <h1>Hola mundo</h1>
+{% extends "blog/base.html" %}
+
+    {% block content %}
+    {% for post in posts %}
         <div>
-            <p>published 14.06.2014, 12:14</p>
-            <h2><a href="" >My first post</a></h2>
-            <p>Lores ipum adfa ingo noawnef oinwe rn inwekl</p>
-        </div>
-    </body>
-</html>
+            <h1><a href='{% url "blog:post_detail" post.id %}' >{{ post.title }}</a></h2>
+            <p>{{ post.published_date }}</p>
+            <p>{{ post.text|linebreaks }}</p>
+        </div>  
+    {% endfor %}  
+{% endblock content %}
+
