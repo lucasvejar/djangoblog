@@ -25,7 +25,7 @@ SECRET_KEY = 'f2&9uqkb1-v3o@3(hgvem@(ls$#2a8hl8c434p3)r34f!ftrep'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['blog-dango.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -122,12 +122,13 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
+
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (  
     os.path.join(BASE_DIR, 'static'),
 )
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Update database configuration with $DATABASE_URL.
 import dj_database_url  
