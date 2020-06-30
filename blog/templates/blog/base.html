@@ -16,11 +16,46 @@
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
-        <div class='page-header'>
-            <h1><a href="/">Bloggy</a></h1>
-            <a href="{% url 'blog:post_new' %}" class="top-menu" >Add post</a>
+        <div class='page-header container-fluid'>
+            <div class="row">
+                <div class="col">
+                    <img class="logo" src="{% static 'img/igLogo' %}" >
+                </div>
+                <div class="col-6">
+                    <div class="row justify-content-md-center">
+                        <div class="col">
+                            <h1><a class="title" href="/">Bloggy</a></h1>
+                            <a href="{% url 'blog:post_new' %}" class="top-menu" >Add post</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        {% block content %}
-        {% endblock content %}
+        <div class="content container-fluid" >
+            <div class="storys-list container-fluid">
+                <ul class="nav">
+                    <li class="nav-item"><img class="story" src="{% static 'img/igLogo' %}"></li>
+                    <li class="nav-item"><img class="story" src="{% static 'img/igLogo' %}"></li>
+                    <li class="nav-item"><img class="story" src="{% static 'img/igLogo' %}"></li>
+                    <li class="nav-item"><img class="story" src="{% static 'img/igLogo' %}"></li>
+                    <li class="nav-item"><img class="story" src="{% static 'img/igLogo' %}"></li>
+                </ul>
+            </div> 
+            <div class="row justify-content-md-center">
+                <div class="card-deck">
+                    <div class="card">
+                        {% block content %}
+                        {% endblock content %}
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Settings</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
     </body>
 </html>

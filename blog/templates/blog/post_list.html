@@ -1,12 +1,35 @@
 {% extends "blog/base.html" %}
+{% load static %}
 
-    {% block content %}
-    {% for post in posts %}
-        <div>
-            <h1><a href='{% url "blog:post_detail" post.id %}' >{{ post.title }}</a></h2>
-            <p>{{ post.published_date }}</p>
-            <p>{{ post.text|linebreaks }}</p>
-        </div>  
-    {% endfor %}  
+{% block content %}
+{% for post in posts %}
+    <div class="row">
+        <div class="col">
+            <div class="post-content center" >
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header">
+                        <img class="story-header" src="{% static 'img/igLogo' %}">
+                        <h4 class="user-name"><b>Name</b></h4>
+                    </div>
+                    <img src="{% static 'img/igLogo' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="icons">
+                            <h6 class="card-title">
+                                <ul class="list-group list-group-horizontal">
+                                    <li class="list-group-item">Heart</li>
+                                    <li class="list-group-item">Save</li>
+                                    <li class="list-group-item">Archive</li>
+                                </ul>
+                            </h6>
+                        </div>
+                        <p class="card-text">{{ post.text|linebreaks }}</p>
+                        <a href='{% url "blog:post_detail" post.id %}' class="btn btn-primary">{{ post.title }}</a>
+                        <input type="text" name="comments">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+{% endfor %}  
 {% endblock content %}
 
