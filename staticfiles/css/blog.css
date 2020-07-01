@@ -9,6 +9,7 @@ body{
     background: -webkit-linear-gradient(to bottom, #C6426E, #642B73);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to bottom, #C6426E, #642B73); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     min-height: 150px;
+    margin-bottom: 40px;
 }
 
 .logo-image{
@@ -27,9 +28,6 @@ body{
     font-family: cursive;
 }
 
-.post-content{
-    align-content: center;
-}
 
 .story{
     width: 70px;
@@ -47,6 +45,17 @@ body{
     border: none;
 }
 
+.card-post{
+    position: relative;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    margin: 20px;
+}
+
 .card-header{
     background-color: white;
 }
@@ -60,4 +69,8 @@ body{
 
 .user-name{
     margin-top: 8px;
+}
+
+.card-deck{
+    margin-left: 170px;
 }

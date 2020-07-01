@@ -10,10 +10,11 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Django</title>
+        <title>Fake Instagram</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="icon" href="{% static 'img/igLogo' %}" type="image/jpeg">
     </head>
     <body>
         <div class='page-header container-fluid'>
@@ -32,18 +33,21 @@
             </div>
         </div>
         <div class="content container-fluid" >
-            <div class="storys-list container-fluid">
-                <ul class="nav">
-                    <li class="nav-item"><img class="story" src="{% static 'img/igLogo' %}"></li>
-                    <li class="nav-item"><img class="story" src="{% static 'img/igLogo' %}"></li>
-                    <li class="nav-item"><img class="story" src="{% static 'img/igLogo' %}"></li>
-                    <li class="nav-item"><img class="story" src="{% static 'img/igLogo' %}"></li>
-                    <li class="nav-item"><img class="story" src="{% static 'img/igLogo' %}"></li>
-                </ul>
-            </div> 
+            
             <div class="row justify-content-md-center">
                 <div class="card-deck">
                     <div class="card">
+                        <div class="card-post">
+                            <div class="storys-list container-fluid">
+                                <ul class="nav">
+                                    <li class="nav-item"><img class="story" src="{% static 'img/igLogo' %}"></li>
+                                    <li class="nav-item"><img class="story" src="{% static 'img/igLogo' %}"></li>
+                                    <li class="nav-item"><img class="story" src="{% static 'img/igLogo' %}"></li>
+                                    <li class="nav-item"><img class="story" src="{% static 'img/igLogo' %}"></li>
+                                    <li class="nav-item"><img class="story" src="{% static 'img/igLogo' %}"></li>
+                                </ul>
+                            </div> 
+                        </div>
                         {% block content %}
                         {% endblock content %}
                     </div>
