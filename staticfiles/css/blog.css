@@ -8,8 +8,7 @@ body{
     background: #642B73;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom, #C6426E, #642B73);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to bottom, #C6426E, #642B73); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    min-height: 150px;
-    margin-bottom: 40px;
+    width: 100%;
 }
 
 .logo-image{
@@ -21,6 +20,14 @@ body{
     height: 40px;
     width: 40px;
     border-radius: 20%;
+}
+
+.user-profile-pic{
+    height: 35px;
+    width: 35px;
+    margin-right: 10px;
+    border-radius: 100%;
+    float: left;
 }
 
 .title{
@@ -73,4 +80,32 @@ body{
 
 .card-deck{
     margin-left: 170px;
+}
+
+.side-panel{
+    margin-top: 20px;
+    max-width: 350px;
+}
+
+.see-all{
+    float: inline-end;
+}
+
+.suggestions-list-item{
+    border: none;
+}
+
+.suggestions-list-item > img {
+    width: 20px;
+    height: 20px;
+    float: inline-start;
+    margin-left: -17px;
+}
+
+.suggestion-user-name{
+    margin-left: -70px;
+}
+
+.sticky-card{
+    position: sticky;
 }

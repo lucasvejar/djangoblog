@@ -5,7 +5,6 @@ from .models import Post
 from .forms import PostForm
 
 
-
 def index(request):
     return HttpResponse("Hello dear web page")
 

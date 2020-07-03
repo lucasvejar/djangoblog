@@ -17,46 +17,57 @@
         <link rel="icon" href="{% static 'img/igLogo' %}" type="image/jpeg">
     </head>
     <body>
-        <div class='page-header container-fluid'>
-            <div class="row">
-                <div class="col">
-                    <img class="logo" src="{% static 'img/igLogo' %}" >
-                </div>
-                <div class="col-6">
-                    <div class="row justify-content-md-center">
-                        <div class="col">
-                            <h1><a class="title" href="/">Bloggy</a></h1>
-                            <a href="{% url 'blog:post_new' %}" class="top-menu" >Add post</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="sticky-top page-header container-fluid"> 
+        <nav class="navbar navbar-expand-lg">
+          <a class="title navbar-brand" href="/">
+            <img class="logo" src="{% static 'img/igLogo' %}">
+            FakeStagram
+          </a>
+        </nav>
+      </div>
+        
         <div class="content container-fluid" >
-            
             <div class="row justify-content-md-center">
                 <div class="card-deck">
                     <div class="card">
-                        <div class="card-post">
-                            <div class="storys-list container-fluid">
-                                <ul class="nav">
-                                    <li class="nav-item"><img class="story" src="{% static 'img/igLogo' %}"></li>
-                                    <li class="nav-item"><img class="story" src="{% static 'img/igLogo' %}"></li>
-                                    <li class="nav-item"><img class="story" src="{% static 'img/igLogo' %}"></li>
-                                    <li class="nav-item"><img class="story" src="{% static 'img/igLogo' %}"></li>
-                                    <li class="nav-item"><img class="story" src="{% static 'img/igLogo' %}"></li>
-                                </ul>
-                            </div> 
-                        </div>
-                        {% block content %}
-                        {% endblock content %}
+                        {% block content %}{% endblock content %}
                     </div>
                     <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Settings</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        {% block side_panel %}
+                        <div class="side-panel card-body">
+                            <div>
+                              <img class="user-profile-pic" src="{% static 'img/igLogo' %}" >
+                              <h5 class="card-title">
+                                User
+                              </h5>
+                            </div>
+                            <div style="margin-top: 35px;">
+                              <p class="card-text">
+                                Suggestions For You
+                                <a href="{% url 'blog:post_new' %}" class="see-all" style="color: #000000;" ><strong>Add post</strong></a>
+                              </p>
+                            </div>
+                            <div style="margin-top: 15px;">
+                              <ul class=" list-group">
+                                <li class="suggestions-list-item list-group-item d-flex justify-content-between align-items-center">
+                                  <img src="{% static 'img/igLogo' %}" >
+                                  <div class="suggestion-user-name">Some content</div>
+                                  <a href="/" >Follow</a>
+                                </li>
+                                <li class="suggestions-list-item list-group-item d-flex justify-content-between align-items-center">
+                                  <img src="{% static 'img/igLogo' %}" >
+                                  <div class="suggestion-user-name">asij innrwaon </div>
+                                  <a href="/" >Follow</a>
+                                </li>
+                                <li class="suggestions-list-item list-group-item d-flex justify-content-between align-items-center">
+                                  <img src="{% static 'img/igLogo' %}" >
+                                  <div class="suggestion-user-name">Oeif n UNEF</div>
+                                  <a href="/" >Follow</a>
+                                </li>
+                              </ul>
+                            </div>
                         </div>
+                        {% endblock side_panel %}
                     </div>
                 </div>                
             </div>
