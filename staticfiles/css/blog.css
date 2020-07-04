@@ -1,9 +1,17 @@
+/***********************
+    Global styles
+************************/
+
 body{
     color: #000000;
     background-color: #ffffff;
+    width: 100%;
 }
 
 
+/***********************
+    Header Css
+*************************/
 .page-header{
     background: #642B73;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom, #C6426E, #642B73);  /* Chrome 10-25, Safari 5.1-6 */
@@ -11,17 +19,31 @@ body{
     width: 100%;
 }
 
+
 .logo-image{
     width: 20px;
     height: 20px;
 }
 
+
+/**************************
+    Storys
+***************************/
 .logo{
     height: 40px;
     width: 40px;
     border-radius: 20%;
 }
 
+.storys-list{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+/*******************************
+    Post
+********************************/
 .user-profile-pic{
     height: 35px;
     width: 35px;
@@ -35,7 +57,6 @@ body{
     font-family: cursive;
 }
 
-
 .story{
     width: 70px;
     height: 70px;
@@ -43,9 +64,20 @@ body{
     margin-right: 5px;
 }
 
-.storys-list{
-    margin-top: 10px;
-    margin-bottom: 10px;
+.content{
+    min-width: 500px;
+}
+
+.story-header{
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-right: 10px;
+    border-radius: 100%;
+}
+
+.user-name{
+    margin-top: 8px;
 }
 
 .card{
@@ -67,21 +99,14 @@ body{
     background-color: white;
 }
 
-.story-header{
-    width: 50px;
-    height: 50px;
-    float: left;
-    margin-right: 10px;
-}
-
-.user-name{
-    margin-top: 8px;
-}
-
 .card-deck{
     margin-left: 170px;
 }
 
+
+/***********************
+    Side Panel
+************************/
 .side-panel{
     margin-top: 20px;
     max-width: 350px;
@@ -103,9 +128,13 @@ body{
 }
 
 .suggestion-user-name{
-    margin-left: -70px;
+    margin-left: 0px;
 }
 
-.sticky-card{
-    position: sticky;
+
+.settings-column{
+    position: fixed;
+    right: 5%;
+    min-width: 430px;
+    height: auto;
 }

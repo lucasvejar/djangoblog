@@ -2,13 +2,13 @@
 
 {% block content %}
     <div class="post">
-        {% if post.published_date %}
+        {% if post.created_date %}
             <div class="date">
-                {{ post.published_date }}
+                {{ post.created_date }}
             </div>
         {% endif %}
         <a class="btn btn-default" href="{% url 'blog:post_edit' post.id %}">Editar</a>
-        <h1>{{ post.title }}</h1>
-        <p>{{ post.text|linebreaks }}</p>
+        <h1>{{ post.id }}</h1>
+        <p>{{ post.description|linebreaks }}</p>
     </div>
 {% endblock content %}

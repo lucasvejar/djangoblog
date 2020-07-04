@@ -5,7 +5,7 @@
 {% bootstrap_javascript jquery='full' %}
 
 
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <html class="no-js">
     <head>
         <meta charset="utf-8">
@@ -17,6 +17,7 @@
         <link rel="icon" href="{% static 'img/igLogo' %}" type="image/jpeg">
     </head>
     <body>
+
       <div class="sticky-top page-header container-fluid"> 
         <nav class="navbar navbar-expand-lg">
           <a class="title navbar-brand" href="/">
@@ -25,52 +26,59 @@
           </a>
         </nav>
       </div>
-        
-        <div class="content container-fluid" >
-            <div class="row justify-content-md-center">
-                <div class="card-deck">
-                    <div class="card">
-                        {% block content %}{% endblock content %}
-                    </div>
-                    <div class="card">
-                        {% block side_panel %}
-                        <div class="side-panel card-body">
-                            <div>
-                              <img class="user-profile-pic" src="{% static 'img/igLogo' %}" >
-                              <h5 class="card-title">
-                                User
-                              </h5>
-                            </div>
-                            <div style="margin-top: 35px;">
-                              <p class="card-text">
-                                Suggestions For You
-                                <a href="{% url 'blog:post_new' %}" class="see-all" style="color: #000000;" ><strong>Add post</strong></a>
-                              </p>
-                            </div>
-                            <div style="margin-top: 15px;">
-                              <ul class=" list-group">
-                                <li class="suggestions-list-item list-group-item d-flex justify-content-between align-items-center">
-                                  <img src="{% static 'img/igLogo' %}" >
-                                  <div class="suggestion-user-name">Some content</div>
-                                  <a href="/" >Follow</a>
-                                </li>
-                                <li class="suggestions-list-item list-group-item d-flex justify-content-between align-items-center">
-                                  <img src="{% static 'img/igLogo' %}" >
-                                  <div class="suggestion-user-name">asij innrwaon </div>
-                                  <a href="/" >Follow</a>
-                                </li>
-                                <li class="suggestions-list-item list-group-item d-flex justify-content-between align-items-center">
-                                  <img src="{% static 'img/igLogo' %}" >
-                                  <div class="suggestion-user-name">Oeif n UNEF</div>
-                                  <a href="/" >Follow</a>
-                                </li>
-                              </ul>
-                            </div>
-                        </div>
-                        {% endblock side_panel %}
-                    </div>
-                </div>                
+
+      
+      <div class="container-fluid">
+        <div class="row justify-content-between">
+          <div class="col">
+            <div class="card-deck">
+              <div class="card content">
+                {% block content %}{% endblock content %}
+              </div>
             </div>
+          </div>
+        
+          <div class="col">
+            <div class="settings-column">
+              {% block side_panel %}
+              <div class="side-panel card-body">
+                  <div>
+                    <img class="user-profile-pic" src="{% static 'img/igLogo' %}" >
+                    <h5 class="card-title">
+                      User
+                    </h5>
+                  </div>
+                  <div style="margin-top: 35px;">
+                    <p class="card-text">
+                      Suggestions For You
+                      <a href="{% url 'blog:post_new' %}" class="see-all" style="color: #000000;" ><strong>Add post</strong></a>
+                    </p>
+                  </div>
+                  <div style="margin-top: 15px;">
+                    <ul class=" list-group">
+                      <li class="suggestions-list-item list-group-item d-flex justify-content-between align-items-center">
+                        <img src="{% static 'img/igLogo' %}" >
+                        <div class="suggestion-user-name">Some content </div>
+                        <a href="/" >Follow</a>
+                      </li>
+                      <li class="suggestions-list-item list-group-item d-flex justify-content-between align-items-center">
+                        <img src="{% static 'img/igLogo' %}" >
+                        <div class="suggestion-user-name">asij innrwaon </div>
+                        <a href="/" >Follow</a>
+                      </li>
+                      <li class="suggestions-list-item list-group-item d-flex justify-content-between align-items-center">
+                        <img src="{% static 'img/igLogo' %}" >
+                        <div class="suggestion-user-name">Oeif n UNEF</div>
+                        <a href="/" >Follow</a>
+                      </li>
+                    </ul>
+                  </div>
+              </div>
+              {% endblock side_panel %}
+            </div>
+          </div>
         </div>
+      </div>
+
     </body>
 </html>

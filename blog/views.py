@@ -9,7 +9,7 @@ def index(request):
     return HttpResponse("Hello dear web page")
 
 def post_list(request):
-    posts = Post.objects.order_by('published_date')
+    posts = Post.objects.order_by('created_date')
     return render(request, 'blog/post_list.html', {'posts': posts}) 
 
 def post_detail(request, pk):
