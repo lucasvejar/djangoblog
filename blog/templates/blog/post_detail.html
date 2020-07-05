@@ -8,7 +8,7 @@
             </div>
         {% endif %}
         <a class="btn btn-default" href="{% url 'blog:post_edit' post.id %}">Editar</a>
-        <h1>{{ post.id }}</h1>
+        <h1>{{ post.user_name }}</h1>
         <p>{{ post.description|linebreaks }}</p>
     </div>
 {% endblock content %}

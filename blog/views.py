@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.utils import timezone
-from .models import Post
+from .models import Post, Comment, User
 from .forms import PostForm
 
 
@@ -10,7 +10,8 @@ def index(request):
 
 def post_list(request):
     posts = Post.objects.order_by('created_date')
-    return render(request, 'blog/post_list.html', {'posts': posts}) 
+    users = User.objects.all()
+    return render(request, 'blog/post_list.html', {'posts': posts, 'users': users}) 
 
 def post_detail(request, pk):
     post = Post.objects.get(id=pk) #get_object_or_404(request, pk=pk)
