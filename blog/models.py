@@ -7,7 +7,7 @@ class User(models.Model):
     user = models.CharField(max_length = 30)
     user_name = models.CharField(max_length = 40)
     biography = models.CharField(max_length = 200)
-    profile_pic = models.CharField(max_length = 200)
+    profile_img = models.CharField(max_length=200)
 
     def __str__(self):
         return self.user_name
@@ -33,3 +33,9 @@ class Comment(models.Model):
     users_who_commented = models.ForeignKey('User',on_delete=models.CASCADE)
     content = models.TextField()
     liked = models.IntegerField()
+
+
+class Story(models.Model):
+    user = models.ForeignKey('User',on_delete=models.CASCADE)
+    img_path = models.CharField(max_length=200)
+    creation_date = models.DateTimeField(default=timezone.now)
