@@ -7,6 +7,7 @@ class User(models.Model):
     user = models.CharField(max_length = 30)
     user_name = models.CharField(max_length = 40)
     biography = models.CharField(max_length = 200)
+    profile_pic = models.CharField(max_length = 200)
 
     def __str__(self):
         return self.user_name

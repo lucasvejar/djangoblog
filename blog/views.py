@@ -10,8 +10,9 @@ def index(request):
 
 def post_list(request):
     posts = Post.objects.order_by('created_date')
+    user = User.objects.get(pk=1)
     users = User.objects.all()
-    return render(request, 'blog/post_list.html', {'posts': posts, 'users': users}) 
+    return render(request, 'blog/post_list.html', {'posts': posts, 'users': users, 'user': user}) 
 
 def post_detail(request, pk):
     post = Post.objects.get(id=pk) #get_object_or_404(request, pk=pk)
