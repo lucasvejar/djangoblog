@@ -43,6 +43,12 @@ def loginPage(request):
     return render(request, 'blog/login.html',context=context)
 
 
+def logoutUser(request):
+    logout(request)
+    return redirect('blog:login')
+
+
+
 def post_list(request):
     posts = Post.objects.order_by('created_date')
     user = User.objects.get(pk=1)
