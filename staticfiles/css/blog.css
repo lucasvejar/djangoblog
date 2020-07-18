@@ -138,3 +138,32 @@ body{
     min-width: 430px;
     height: auto;
 }
+
+/*******************************
+            Login Css
+ ******************************/
+.login{
+    margin-left: 25%;
+    max-width: 650px;
+    position: absolute;
+    top: 15%;
+    display: flex;
+    justify-content: center;
+}
+
+.form-login{
+    margin-left: 40px;
+    margin-top: 15%;
+    min-width: 500px;
+    min-height: 500px;
+}
+
+.field-login{
+    margin-left: 60px;
+    inset-inline-end: initial;
+    min-width: fit-content;
+}
+
+.btn-register{
+    max-width: 400px;
+}

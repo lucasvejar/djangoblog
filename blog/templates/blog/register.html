@@ -1,28 +1,48 @@
+{% load static %}
 {% load bootstrap4 %}
 {% bootstrap_css %}
 
-
-<div class="container-fluid">
-    <h1>This is the registration page dude</h1>
-    <form method="POST" class="form"> 
-        {% csrf_token %}
-        {% for field in form %}
-            <div class="">
-                {{field.label}}
-            </div>
-            <div class="">
-                {{field}}
-            </div>
-        {% endfor %}
-        <div class="">
-            <input type="submit" class="btn btn-primary" name="register">
-        </div>    
-        <p>
-            {{form.errors}}
-        </p>
-    </form>
-    <div class="container">
-        <p>Already have an account? </p>
-        <a href="{% url 'blog:login' %}">Log in</a>
-    </div>    
-</div>
+<!DOCTYPE>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="{% static 'css/blog.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="login">
+            <div class="container">
+                <h1>This is the registration page dude</h1>
+                <form method="POST" class="form-login"> 
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="form-group row">
+                            <label for="{{field.label}}" class="col-form-label col-sm-2">
+                                {{field.label}}
+                            </label>
+                            <div class="col-sm-1 field-login">
+                                {{field}}
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <div class="form-row aling-items-center">
+                        <div class="container">
+                            <input type="submit" class="btn btn-primary btn-lg btn-block" name="register">
+                        </div>
+                        <div class="container center">
+                            <p>Already have an account? <a href="{% url 'blog:login' %}">Log in</a></p>
+                        </div>  
+                    </div>
+        
+                    {% if form.errors %}
+                    <div class="alert alert-info" role="alert">
+                        {{form.errors}}
+                    </div>
+                    {% endif %}
+                </form>
+            </div>  
+        </div>         
+    </body>
+</html>
