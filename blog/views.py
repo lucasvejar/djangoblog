@@ -35,7 +35,7 @@ def loginPage(request):
         
         if user is not None:
             login(request,user)
-            return redirect('blog:post_list')
+            return redirect('blog:home')
         else:
             messages.info(request,'Username OR password is incorrect')
 
@@ -49,7 +49,7 @@ def logoutUser(request):
 
 
 
-def post_list(request):
+def home(request):
     posts = Post.objects.order_by('created_date')
     user = User.objects.get(pk=1)
     users = User.objects.all()

@@ -1,17 +1,28 @@
-<h1>This is the registration page dude</h1>
+{% load bootstrap4 %}
+{% bootstrap_css %}
 
 
-<form method="POST" > 
-    {% csrf_token %}
-    {% for field in form %}
-        {{field.label}}
-        {{field}}
-    {% endfor %}
-    <input type="submit" name="Register!">
-
-    <p>
-        {{form.errors}}
-    </p>
-</form>
-
-<p>Already have an account? </p><a href="{% url 'blog:login' %}">Log in</a>
+<div class="container-fluid">
+    <h1>This is the registration page dude</h1>
+    <form method="POST" class="form"> 
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="">
+                {{field.label}}
+            </div>
+            <div class="">
+                {{field}}
+            </div>
+        {% endfor %}
+        <div class="">
+            <input type="submit" class="btn btn-primary" name="register">
+        </div>    
+        <p>
+            {{form.errors}}
+        </p>
+    </form>
+    <div class="container">
+        <p>Already have an account? </p>
+        <a href="{% url 'blog:login' %}">Log in</a>
+    </div>    
+</div>
