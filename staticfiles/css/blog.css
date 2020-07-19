@@ -140,30 +140,63 @@ body{
 }
 
 /*******************************
-            Login Css
+            Register&Login Css
  ******************************/
 .login{
-    margin-left: 25%;
-    max-width: 650px;
-    position: absolute;
-    top: 15%;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.form-login{
+    padding: 0px;
     display: flex;
     justify-content: center;
 }
 
-.form-login{
-    margin-left: 40px;
-    margin-top: 15%;
-    min-width: 500px;
-    min-height: 500px;
-}
-
-.field-login{
-    margin-left: 60px;
-    inset-inline-end: initial;
-    min-width: fit-content;
-}
-
 .btn-register{
-    max-width: 400px;
+    max-width: 300px;
+    margin-top: 30px;
+}
+
+.cont-form{
+    padding: 20px; 
+    background-color:#ffffff;
+    border: solid 1px #e4e4e4;
+}
+
+.title-reg{
+    display: flex;
+    justify-content: center;
+}
+
+.footer-register{
+    display: flex;
+    justify-content: center;
+    color: #b1afaf;
+    font-style: initial;
+}
+
+.fields{
+    display: flex;
+    justify-content: center;
+}
+
+
+.divider{
+    margin: 30px;
+    border: solid 0.09px;
+    border-radius: 2px;
+    color:  #ececec;
+}
+
+.subtitle{
+    display: flex;
+    justify-content: center;
+    color: #b1afaf;
+    max-width: 270px;
+    text-align: center;
+    margin: auto;
 }

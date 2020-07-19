@@ -13,36 +13,41 @@
     </head>
     <body>
         <div class="login">
-            <div class="container">
-                <h1>This is the registration page dude</h1>
-                <form method="POST" class="form-login"> 
-                    {% csrf_token %}
-                    {% for field in form %}
-                        <div class="form-group row">
-                            <label for="{{field.label}}" class="col-form-label col-sm-2">
-                                {{field.label}}
-                            </label>
-                            <div class="col-sm-1 field-login">
-                                {{field}}
+            <div class="cont-form">
+                <div class="title-reg">
+                    <h1>Instagram </h1>
+                </div>
+                <div class="subtitle">
+                    <span><b>Sign up to see photos and videos from your friends</b></span>
+                </div>
+                <div class="divider"></div>
+                <div class="center-block form-login">
+                    <form method="POST" class="register">
+                        {% csrf_token %}
+                        {% for field in form %}
+                            <div class="form-group aling-items-center">
+                                <div class="fields col">
+                                    {{field}}
+                                </div>
                             </div>
+                        {% endfor %}
+                            <div class="form-row aling-items-center">
+                                <div class="btn-register container">
+                                    <input type="submit" class="btn btn-primary btn-lg btn-block" name="register">
+                                </div>
+                                <div class="footer-register mx-auto">
+                                    <p>Already have an account? <a href="{% url 'blog:login' %}">Log in</a></p>
+                                </div>  
+                           </div>
+            
+                        {% if form.errors %}
+                        <div class="alert alert-info" role="alert">
+                            {{form.errors}}
                         </div>
-                    {% endfor %}
-                    <div class="form-row aling-items-center">
-                        <div class="container">
-                            <input type="submit" class="btn btn-primary btn-lg btn-block" name="register">
-                        </div>
-                        <div class="container center">
-                            <p>Already have an account? <a href="{% url 'blog:login' %}">Log in</a></p>
-                        </div>  
-                    </div>
-        
-                    {% if form.errors %}
-                    <div class="alert alert-info" role="alert">
-                        {{form.errors}}
-                    </div>
-                    {% endif %}
-                </form>
-            </div>  
+                        {% endif %}
+                    </form>
+                </div> 
+            </div> 
         </div>         
     </body>
 </html>
