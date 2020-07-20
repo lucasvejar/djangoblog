@@ -177,6 +177,7 @@ body{
     justify-content: center;
     color: #b1afaf;
     font-style: initial;
+    margin-top: 7px;
 }
 
 .fields{
@@ -198,5 +199,37 @@ body{
     color: #b1afaf;
     max-width: 270px;
     text-align: center;
-    margin: auto;
+    margin: 5px auto 30px auto;
+}
+
+#id_form_login{
+    margin-top: 18px;
+}
+
+#id_btn_login{
+    margin-top: -28px;
+}
+
+.cont-form .divider{
+    margin-top: -15px;
+}
+
+.forgot-password{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: -15px;
+}
+
+.instagram-title{
+    display: flex;
+    justify-content: center;
+    height: 91px;
+    width: 175px;
+}
+
+.logo-slogan{
+    display: flex;
+    justify-content: center;
+    margin-bottom: -5px;
 }

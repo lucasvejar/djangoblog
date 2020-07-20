@@ -2,7 +2,7 @@
 {% load bootstrap4 %}
 {% bootstrap_css %}
 
-<!DOCTYPE>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,15 +14,15 @@
     <body>
         <div class="login">
             <div class="cont-form">
-                <div class="title-reg">
-                    <h1>Instagram </h1>
+                <div class="logo-slogan">
+                    <img class="instagram-title" src="{% static 'img/instagram.png' %}">
                 </div>
                 <div class="subtitle">
                     <span><b>Sign up to see photos and videos from your friends</b></span>
                 </div>
                 <div class="divider"></div>
                 <div class="center-block form-login">
-                    <form method="POST" class="register">
+                    <form id="formu-register" method="POST" class="register">
                         {% csrf_token %}
                         {% for field in form %}
                             <div class="form-group aling-items-center">
@@ -33,12 +33,12 @@
                         {% endfor %}
                             <div class="form-row aling-items-center">
                                 <div class="btn-register container">
-                                    <input type="submit" class="btn btn-primary btn-lg btn-block" name="register">
+                                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Sign up">
                                 </div>
                                 <div class="footer-register mx-auto">
                                     <p>Already have an account? <a href="{% url 'blog:login' %}">Log in</a></p>
                                 </div>  
-                           </div>
+                            </div>
             
                         {% if form.errors %}
                         <div class="alert alert-info" role="alert">
@@ -48,6 +48,13 @@
                     </form>
                 </div> 
             </div> 
-        </div>         
+        </div>
+        <script>
+            username = document.getElementById("id_username").setAttribute("placeholder","Username")
+            email = document.getElementById("id_email").setAttribute("placeholder","Email")
+            password1 = document.getElementById("id_password1").setAttribute("placeholder","Enter your Password")
+            password2 = document.getElementById("id_password2").setAttribute("placeholder","Repeat the Password")
+        </script>         
     </body>
 </html>
+

@@ -1,17 +1,56 @@
-Login Page
+{% load static %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
 
-<form method="POST" action="">
-    {% csrf_token %}
-    <label>Username: </label>
-    <input type="text" id="username" name="username">
-    <label>Password: </label>
-    <input type="password" id="password" name="password">
-    <input class="btn-primary" type="submit" name="Log In">
-</form>
 
-<p>You don't have an account? </p>
-<a href="{% url 'blog:register' %}">Register now!</a>
 
-{% for message in messages %}
- <p>{{message}}</a>
-{% endfor %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="{% static 'css/blog.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="login">
+            <div class="cont-form">
+                <div class="title-reg">
+                    <img class="instagram-title" src="{% static 'img/instagram.png' %}">
+                </div>
+                <div class="center-block form-login">
+                    <form id="id_form_login" method="POST" class="register">
+                        {% csrf_token %}
+                        <div class="form-group aling-items-center">
+                            <div class="fields col">
+                                <input type="text" id="username" name="username" placeholder="Username">
+                            </div>
+                        </div>
+                        <div class="form-group aling-items-center">
+                            <div class="fields col">
+                                <input type="password" id="password" name="password" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="form-row aling-items-center">
+                            <div class="btn-register container">
+                                <input id="id_btn_login" type="submit" class="btn btn-primary btn-lg btn-block" value="Log In">
+                            </div>
+                            <div class="footer-register mx-auto">
+                                <p>You don't have an account? <a href="{% url 'blog:register' %}">Sign up</a></p>
+                            </div>
+                            {% for message in messages %}
+                            <div class="alert alert-info" role="alert">
+                                {{message}}
+                            </div>
+                            {% endfor %}  
+                        </div>
+                    </form>
+                </div>
+                <div class="divider"></div>
+                <div class="forgot-password mx-auto">
+                    <p><a href="#">Forgot password?</a></p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
