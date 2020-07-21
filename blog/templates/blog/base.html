@@ -24,8 +24,7 @@
             <img class="logo" src="{% static 'img/igLogo' %}">
             FakeStagram
           </a>
-          <span>Hello, {{ request.user }}</span>
-          <span><a href="{% url 'blog:logout' %}">Logout</a></span>
+          <span class="navbar-text">Hello, {{ request.user }} <a href="{% url 'blog:logout' %}">Logout</a></span>
         </nav>
       </div>
 

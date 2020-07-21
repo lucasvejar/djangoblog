@@ -19,6 +19,10 @@ body{
     width: 100%;
 }
 
+.page-header span{
+    color: #ffffff;
+}
+
 
 .logo-image{
     width: 20px;
