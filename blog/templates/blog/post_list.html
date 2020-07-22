@@ -17,7 +17,7 @@
 <div class="card-post">
     <div class="card-header">
         <img class="story-header" src="{% static post.img_path %}">
-        <h4 class="user-name"><b> Username </b></h4>
+        <h4 class="user-name"><b> {{post.user}} </b></h4>
     </div>
     <img src="{% static post.img_path %}" class="card-img-top" alt="...">
     <div class="card-body">
@@ -31,7 +31,7 @@
             </h6>
         </div>
         <p class="card-text">{{ post.description|linebreaks }}</p>
-        <a href='{% url "blog:post_detail" post.id %}' class="btn btn-primary"> User </a>
+        <a href='{% url "blog:post_detail" post.id %}' class="btn btn-primary"> {{post.user}} </a>
         <input type="text" name="comments">
     </div>
 </div>

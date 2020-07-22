@@ -18,7 +18,7 @@ class CustomUser(models.Model):
 
 
 class Post(models.Model):
-    user = models.ForeignKey('auth.User',on_delete=models.CASCADE)
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
     description = models.CharField(max_length = 200)
     img_path = models.CharField(max_length = 200)
     created_date = models.DateTimeField(default=timezone.now)
@@ -34,12 +34,12 @@ class Post(models.Model):
 
 class Comment(models.Model):
     post = models.ForeignKey('Post',on_delete=models.CASCADE)
-    users_who_commented = models.ForeignKey('auth.User',on_delete=models.CASCADE)
+    users_who_commented = models.ForeignKey(User,on_delete=models.CASCADE)
     content = models.TextField()
     liked = models.IntegerField()
 
 
 class Story(models.Model):
-    user = models.ForeignKey('auth.User',on_delete=models.CASCADE)
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
     img_path = models.CharField(max_length=200)
     creation_date = models.DateTimeField(default=timezone.now)
