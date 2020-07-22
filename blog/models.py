@@ -14,9 +14,6 @@ class CustomUser(models.Model):
         return self.user_name
 
 
-
-
-
 class Post(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     description = models.CharField(max_length = 200)
@@ -29,6 +26,10 @@ class Post(models.Model):
         self.created_date = timezone.now()
         self.save()
 
+    def getUserInfo(self,user):
+        userInfo = CustomUser.objects.get(user=user)
+        return userInfo
+
     def __str__(self):
         return self.description
 
@@ -38,6 +39,10 @@ class Comment(models.Model):
     users_who_commented = models.ForeignKey(User,on_delete=models.CASCADE)
     content = models.TextField()
     liked = models.IntegerField()
+
+    def getCommentAuthor(self,author):
+        user = CustomUser.objects.get(user=author)
+        return user
 
 
 class Story(models.Model):

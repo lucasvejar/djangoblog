@@ -52,9 +52,15 @@ def logoutUser(request):
 def home(request):
     posts = Post.objects.order_by('created_date')
     user = CustomUser.objects.get(user=request.user.id)
-    users = CustomUser.objects.all()
-    storys = Story.objects.all()
-    return render(request, 'blog/post_list.html', {'posts': posts, 'users': users, 'user': user, 'storys':storys}) 
+    users = CustomUser.objects.all() # this are supossed to be the friends
+    storys = Story.objects.all() # this are the storys of every friend
+    return render(
+        request, 
+        'blog/post_list.html', 
+        {
+            'posts': posts, 'users': users, 'user': user, 'storys':storys
+        }
+        ) 
 
 
 def post_detail(request, pk):
