@@ -22,6 +22,7 @@ class Post(models.Model):
     description = models.CharField(max_length = 200)
     img_path = models.CharField(max_length = 200)
     created_date = models.DateTimeField(default=timezone.now)
+    likes = models.IntegerField()
 
     # methods
     def publish(self):

@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.utils import timezone
-from .models import Post, Comment, CustomUser
+from .models import Post, Comment, CustomUser, Story
 from .forms import PostForm, CreateUserForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
@@ -53,7 +53,8 @@ def home(request):
     posts = Post.objects.order_by('created_date')
     user = CustomUser.objects.get(user=request.user.id)
     users = CustomUser.objects.all()
-    return render(request, 'blog/post_list.html', {'posts': posts, 'users': users, 'user': user}) 
+    storys = Story.objects.all()
+    return render(request, 'blog/post_list.html', {'posts': posts, 'users': users, 'user': user, 'storys':storys}) 
 
 
 def post_detail(request, pk):
