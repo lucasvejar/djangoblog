@@ -9,6 +9,8 @@ class CustomUser(models.Model):
     user_name = models.CharField(max_length = 40)
     biography = models.CharField(max_length = 200)
     profile_img = models.CharField(max_length=200)
+    friend = models.ManyToManyField('CustomUser')
+
 
     def __str__(self):
         return self.user_name
