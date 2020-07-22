@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.utils import timezone
-from .models import Post, Comment, User
+from .models import Post, Comment, CustomUser
 from .forms import PostForm, CreateUserForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
@@ -51,13 +51,13 @@ def logoutUser(request):
 
 def home(request):
     posts = Post.objects.order_by('created_date')
-    user = User.objects.get(pk=1)
-    users = User.objects.all()
+    user = CustomUser.objects.get(user=request.user.id)
+    users = CustomUser.objects.all()
     return render(request, 'blog/post_list.html', {'posts': posts, 'users': users, 'user': user}) 
 
 
 def post_detail(request, pk):
-    post = Post.objects.get(id=pk) #get_object_or_404(request, pk=pk)
+    post ={} #Post.objects.get(id=pk) #get_object_or_404(request, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
 
 

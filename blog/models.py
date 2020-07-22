@@ -1,16 +1,20 @@
 from django.db import models
 from django.utils import  timezone
+from django.contrib.auth.models import User
 
 
+class CustomUser(models.Model):
 
-class User(models.Model):
-    user = models.CharField(max_length = 30)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     user_name = models.CharField(max_length = 40)
     biography = models.CharField(max_length = 200)
     profile_img = models.CharField(max_length=200)
 
     def __str__(self):
         return self.user_name
+
+
+
 
 
 class Post(models.Model):
