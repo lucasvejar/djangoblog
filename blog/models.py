@@ -32,8 +32,14 @@ class Post(models.Model):
         userInfo = CustomUser.objects.get(user=user)
         return userInfo
 
+    def getPost(self, post):
+        comments = Comment.objects.filter(post=post)
+        user = Post.getUserInfo(Post,post.user)
+        return {'post':post, 'comments':comments, 'user':user}
+
     def __str__(self):
         return self.description
+
 
 
 class Comment(models.Model):
@@ -45,6 +51,10 @@ class Comment(models.Model):
     def getCommentAuthor(self,author):
         user = CustomUser.objects.get(user=author)
         return user
+
+    def getComments(self,post):
+        comments = Comment.objects.filter(post=post)
+        return comments
 
 
 class Story(models.Model):

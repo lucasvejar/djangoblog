@@ -50,21 +50,26 @@ def logoutUser(request):
 
 
 def home(request):
-    posts = Post.objects.order_by('created_date')
     user = CustomUser.objects.get(user=request.user.id)
     users = CustomUser.objects.all() # this are supossed to be the friends
+    posts = Post.objects.all()
+    posts = [ Post.getPost(Post,post) for post in posts ]
     storys = Story.objects.all() # this are the storys of every friend
     return render(
         request, 
         'blog/post_list.html', 
         {
-            'posts': posts, 'users': users, 'user': user, 'storys':storys
+            'posts': posts, 
+            'users': users, 
+            'user': user, 
+            'storys':storys,
         }
-        ) 
+    ) 
 
 
 def post_detail(request, pk):
-    post ={} #Post.objects.get(id=pk) #get_object_or_404(request, pk=pk)
+    #post ={} #Post.objects.get(id=pk) #get_object_or_404(request, pk=pk)
+    posts = Post.objects.filter(user=request.user.id).order_by('created_date')
     return render(request, 'blog/post_detail.html', {'post': post})
 
 
