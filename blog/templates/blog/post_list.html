@@ -29,9 +29,30 @@
                 </ul>
             </h6>
         </div>
-        <p class="card-text"><strong>{{ post.user.user_name }} </strong> {{ post.post.description|linebreaks }}</p>
-        <a href='{% url "blog:post_detail" post.post.id %}' class="btn btn-primary"> Comment </a>
-        <input type="text" name="comments">
+        <div class="post-detail-body">
+            <div class="post-description-header">
+                <p class="card-text"><strong>{{ post.user.user_name }} </strong></p>
+                <div class="post-description">
+                    {{ post.post.description|linebreaks }}
+                </div>
+            </div>
+            {% for comment in post.comments %}
+            <div class="comments-card">
+                <div class="comment-img">
+                    <img class="user-profile-pic" src="{% static post.user.profile_img %}">
+                </div>
+                <div class="comment-content">
+                    <p>{{ comment.content }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="add-comment card-footer bg-transparent input-group">
+        <input class="comment-input form-control" type="text" name="comments" placeholder="Add a comment...">
+        <div class="comment-btn input-group-append">
+            <a href='{% url "blog:post_detail" post.post.id %}' class="btn btn-sm btn-link"><b>Post</b></a>
+        </div>
     </div>
 </div>
 {% endfor %}  
