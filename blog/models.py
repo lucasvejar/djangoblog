@@ -33,7 +33,7 @@ class Post(models.Model):
         return userInfo
 
     def getPost(self, post):
-        comments = Comment.objects.filter(post=post)
+        comments = Comment.getComments(Comment,post=post)
         user = Post.getUserInfo(Post,post.user)
         return {'post':post, 'comments':comments, 'user':user}
 
@@ -54,6 +54,7 @@ class Comment(models.Model):
 
     def getComments(self,post):
         comments = Comment.objects.filter(post=post)
+        comments = [ {'comment':comment,'user':Comment.getCommentAuthor(Comment,comment.users_who_commented)} for comment in comments ]
         return comments
 
 

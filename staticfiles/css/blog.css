@@ -256,7 +256,7 @@ body{
 
 .post-detail-body{
     background-color: yellow;
-    padding: 0%;
+    padding: 0px;
 }
 
 .comments-card {
@@ -275,4 +275,12 @@ body{
 
 .comment-input{
     border: none;
+}
+
+.post-card{
+    padding: 14px;
+}
+
+.comment-img{
+    float: left;
 }

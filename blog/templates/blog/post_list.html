@@ -15,11 +15,11 @@
 {% for post in posts %}
 <div class="card-post">
     <div class="card-header">
-        <img class="story-header" src="{% static post.post.img_path %}">
+        <img class="story-header" src="{% static post.user.profile_img %}">
         <h4 class="user-name"><b> {{ post.user.user_name }} </b></h4>
     </div>
     <img src="{% static post.post.img_path %}" class="card-img-top" alt="...">
-    <div class="card-body">
+    <div class="card-body post-card">
         <div class="icons">
             <h6 class="card-title">
                 <ul class="list-group list-group-horizontal">
@@ -39,10 +39,14 @@
             {% for comment in post.comments %}
             <div class="comments-card">
                 <div class="comment-img">
+                    <!-- uncomment the line below if you want to have the picture of the guy who commented -->
+                    <!--
                     <img class="user-profile-pic" src="{% static post.user.profile_img %}">
+                    -->
+                    <b>{{ comment.user.user_name }}</b>
                 </div>
                 <div class="comment-content">
-                    <p>{{ comment.content }}</p>
+                    <p>{{ comment.comment.content }}</p>
                 </div>
             </div>
             {% endfor %}
