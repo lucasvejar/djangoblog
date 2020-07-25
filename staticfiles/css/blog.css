@@ -13,17 +13,26 @@ body{
     Header Css
 *************************/
 .page-header{
-    background: #642B73;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #C6426E, #642B73);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #C6426E, #642B73); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    width: 100%;
-    padding-left: 221px;
+   /* background: #642B73;  /* fallback for old browsers */
+   /* background: -webkit-linear-gradient(to bottom, #C6426E, #642B73);  /* Chrome 10-25, Safari 5.1-6 */
+   /* background: linear-gradient(to bottom, #C6426E, #642B73); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   background-color: #ffffff; 
+   /*width: 100%; */
+   padding-left: 221px;
+   padding-right: 0;
+   border-bottom: 1px #cfcfcf solid;
 }
 
 .page-header span{
-    color: #ffffff;
+    color: #030303;
 }
 
+
+.page-header .col{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
 
 .logo-image{
     display: inline-flex;
@@ -35,6 +44,15 @@ body{
     padding: 0;
     max-height: 88px;
 }
+
+.search-top-form{
+    padding-top: 10px;
+}
+
+.icon-list{
+    border: none;
+}
+
 
 /**************************
     Storys
