@@ -14,6 +14,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'fontawesome/css/all.min.css' %}" />
         <link rel="icon" href="{% static 'img/igLogo' %}" type="image/jpeg">
     </head>
     <body>
@@ -54,7 +55,7 @@
                     <a href="{% url 'blog:post_new' %}" class="see-all" style="color: #000000;" ><strong>Add post</strong></a>
                   </p>
                 </div>
-                <div style="margin-top: 15px;">
+                <div class="sugestion-list" style="margin-top: 15px;">
                   <ul class=" list-group">
                     {% for user in users %}
                     <li class="suggestions-list-item list-group-item d-flex justify-content-between align-items-center">

@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',    # my app
-    'bootstrap4',   # bootstrap
+    'bootstrap4',   # bootstrap,
+    'django_static_fontawesome'
 ]
 
 MIDDLEWARE = [

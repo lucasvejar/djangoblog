@@ -4,7 +4,7 @@
 
 body{
     color: #000000;
-    background-color: #ffffff;
+    background-color:rgba(var(--b3f,250,250,250),1);
     width: 100%;
 }
 
@@ -68,8 +68,40 @@ body{
     margin-right: 5px;
 }
 
+.icons-post-list .list-group-item {
+    border: none;
+    padding: 2px 20px 0 0;
+    display: flex;
+}
+
+.icons-post-menu{
+    font-size: 1.4rem;
+    float: right;
+}
+
+.menu-items-list{
+    padding-right: 0;
+}
+
+.icons{
+    padding: 0 0 15px 15px;
+}
+
+.left-icons{
+    padding: 0;
+    display: flex;
+    margin-left: -15px;
+}
+
+.right-icons{
+    padding: 0;
+    text-align: end;
+    margin-right: -15px;
+}
+
 .content{
-    min-width: 500px;
+    min-width: 614px;
+    background-color: rgba(var(--b3f,250,250,250),1);
 }
 
 .story-header{
@@ -92,7 +124,7 @@ body{
     position: relative;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #fff;
+    background-color: #ffffff;
     background-clip: border-box;
     border: 1px solid rgba(0,0,0,.125);
     border-radius: .25rem;
@@ -108,6 +140,24 @@ body{
 }
 
 
+.post-description-header{
+    height: auto;
+    line-height: 20px;
+    margin-bottom: 3px;
+}
+
+.post-description{
+    display: flex;
+    justify-content: left;
+    margin-left: 0px; 
+}
+
+.user-post-comment{
+    float: left;
+    margin-right: 10px;
+}
+
+
 /***********************
     Side Panel
 ************************/
@@ -120,8 +170,13 @@ body{
     float: inline-end;
 }
 
+.sugestion-list{
+    background-color: rgba(var(--b3f,250,250,250),1);
+}
+
 .suggestions-list-item{
     border: none;
+    background-color: rgba(var(--b3f,250,250,250),1);
 }
 
 .suggestions-list-item > img {
@@ -244,7 +299,7 @@ body{
 *********************************/
 
 .comment-content{
-    background-color: green;
+   /* background-color: green;  */
     display: flex;
     justify-content: left;
     margin-left: 0px;
@@ -255,12 +310,14 @@ body{
 }
 
 .post-detail-body{
-    background-color: yellow;
+     /* background-color: yellow; */
     padding: 0px;
 }
 
 .comments-card {
-    background-color: red;   
+    /* background-color: red; */
+    padding-bottom: 0px;
+    line-height: 5px;
 }
 
 .add-comment{

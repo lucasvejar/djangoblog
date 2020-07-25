@@ -20,20 +20,27 @@
     </div>
     <img src="{% static post.post.img_path %}" class="card-img-top" alt="...">
     <div class="card-body post-card">
-        <div class="icons">
-            <h6 class="card-title">
-                <ul class="list-group list-group-horizontal">
-                    <li class="list-group-item">Heart</li>
-                    <li class="list-group-item">Save</li>
-                    <li class="list-group-item">Archive</li>
-                </ul>
-            </h6>
+        <div class="icons container-fluid">
+            <div class="container menu-items-list row">
+                <div class="col left-icons" >
+                    <ul class="icons-post-list list-group list-group-horizontal">
+                        <li class="list-group-item"><i class="icons-post-menu fas fa-heart"></i></li>
+                        <li class="list-group-item"><i class="icons-post-menu fas fa-comment"></i></li>
+                        <li class="list-group-item"><i class="icons-post-menu fas fa-paper-plane"></i></li>
+                    </ul>
+                </div>
+                <div class="col right-icons" >
+                    <i class="icons-post-menu fas fa-bookmark"></i>
+                </div>
+            </div>
         </div>
         <div class="post-detail-body">
             <div class="post-description-header">
-                <p class="card-text"><strong>{{ post.user.user_name }} </strong></p>
+                <div class="user-post-comment">
+                    <b>{{ post.user.user_name }}</b>
+                </div>
                 <div class="post-description">
-                    {{ post.post.description|linebreaks }}
+                    <p>{{ post.post.description|linebreaks }}</p>
                 </div>
             </div>
             {% for comment in post.comments %}
