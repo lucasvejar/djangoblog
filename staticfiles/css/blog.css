@@ -60,6 +60,12 @@ body{
     text-decoration: inherit;
     max-width: 217px;
     max-height: 28px;
+    color: #cfcfcf !important;
+}
+
+.form-control::placeholder {
+    color: #cfcfcf;
+    opacity: 1;
 }
 
 .icon-list{

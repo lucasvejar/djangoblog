@@ -38,7 +38,7 @@
               <li class="icon-list list-group-item"><i class='far fa-compass fa-lg'></i></li>
               <li class="icon-list list-group-item"><i class="far fa-heart fa-lg"></i></li>
             </ul>
-            <img class="top-user-img rounded-circle" src="{% static user.profile_img %}" >
+            <a href="{% url 'blog:logout' %}"><img class="top-user-img rounded-circle" src="{% static user.profile_img %}" ></a>
           </div>
         </div>
       </div>
@@ -60,7 +60,7 @@
                 <div>
                   <img class="user-profile-pic" src="{% static user.profile_img %}" >
                   <h5 class="card-title">
-                    {{user.user_name}}  
+                    <b>{{user.user_name}}</b>  
                   </h5>
                 </div>
                 <div style="margin-top: 35px;">
