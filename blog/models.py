@@ -62,3 +62,7 @@ class Story(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     img_path = models.CharField(max_length=200)
     creation_date = models.DateTimeField(default=timezone.now)
+
+    def getUserName(self,story):
+        user = CustomUser.objects.get(user=story.user)
+        return {'story':story, 'user':user}

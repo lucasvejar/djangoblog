@@ -55,6 +55,7 @@ def home(request):
     posts = Post.objects.all()
     posts = [ Post.getPost(Post,post) for post in posts ]
     storys = Story.objects.all() # this are the storys of every friend
+    storys = [ Story.getUserName(Story,story) for story in storys ]
     return render(
         request, 
         'blog/post_list.html', 
