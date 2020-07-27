@@ -59,28 +59,54 @@
               <div class="side-panel card-body">
                 <div class="">
                   <img class="user-profile-pic" src="{% static user.profile_img %}" >
-                  <h5 class="card-title">
+                  <h5 class="card-title user-title">
                     <b>{{user.user_name}}</b>
                     <p class="sub-title-user"><small class="text-muted">{{user.user}}</small></p>  
                   </h5>
                 </div>
                 <div class="suggestions-title" >
 
-                  <p class="card-text">
-                    Suggestions For You
+                  <p class="card-text text-muted">
+                    <b>Suggestions For You</b>
                     <a href="{% url 'blog:post_new' %}" class="see-all text-decoration-none" ><strong>Add post</strong></a>
                   </p>
                 </div>
                 <div class="sugestion-list">
-                  <ul class=" list-group">
+                  <table class="table table-sm" style="border: none;">
+                    <tbody>
+                 <!-- <ul class=" list-group"> -->
                     {% for user in users %}
-                    <li class="suggestions-list-item list-group-item d-flex justify-content-between align-items-center">
-                        <img src="{% static user.profile_img %}" class="user-profile-pic" >
-                        <div class="suggestion-user-name"> {{user.user_name}} </div>
-                        <a href="{% url 'blog:home' %}" class="text-decoration-none" >Follow</a>
-                    </li>
+                    <!--<li class="suggestions-list-item list-group-item d-flex justify-content-between align-items-center"> -->
+                      <tr>
+                        <td colspan="1" class="img-table">
+                          <img src="{% static user.profile_img %}" class="user-profile-pic" >
+                        </td>
+                        <td colspan="2">
+                          <div class="suggestion-user-name">
+                            <h5 class="card-title user-title">
+                              <b>{{user.user_name}}</b>
+                              <p class="sub-title-user"><small class="text-muted">{{user.user}}</small></p>  
+                            </h5>
+                          </div>
+                        </td>
+                        <td class="link-table" colspan="1">
+                          <small><a href="{% url 'blog:home' %}" class="link-follow text-decoration-none" ><b>Follow</b></a></small>
+                        </td>
+                      </tr>
+                    <!--  <div class="row suggestion-row">
+                        <div class="col" style="background-color: red;">
+                          <img src="{% static user.profile_img %}" class="user-profile-pic" >
+                        </div>
+                        <div class="col suggestion-user-name"> {{user.user_name}} </div>
+                        <div class="col" style="background-color: yellow;">
+                          <a href="{% url 'blog:home' %}" class="text-decoration-none" >Follow</a>
+                        </div>
+                      </div> -->
+                   <!-- </li>  -->
                     {% endfor %}
-                  </ul>
+                   </tbody>
+                  </table>
+                  <!-- </ul> -->
                 </div>
               </div>
             </div>
