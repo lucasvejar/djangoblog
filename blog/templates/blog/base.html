@@ -31,14 +31,23 @@
               </div>
             </form>
           </div>
-          <div class="top-menu-list col" >
+          <div class="top-menu-list col nav" >
             <ul class="list-group list-group-horizontal-sm">
               <li class="icon-list list-group-item"><i class="far fa-map fa-lg"></i></li>
               <li class="icon-list list-group-item"><i class="far fa-paper-plane fa-lg"></i></li>
               <li class="icon-list list-group-item"><i class='far fa-compass fa-lg'></i></li>
-              <li class="icon-list list-group-item"><i class="far fa-heart fa-lg"></i></li>
+              <li class="icon-list list-group-item"><i class="far fa-heart fa-lg"></i></li> 
+              <li class="icon-list list-group-item nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><img class="top-user-img rounded-circle" src="{% static user.profile_img %}" ></a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+              </li> 
             </ul>
-            <a href="{% url 'blog:logout' %}"><img class="top-user-img rounded-circle" src="{% static user.profile_img %}" ></a>
           </div>
         </div>
       </div>

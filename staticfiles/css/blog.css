@@ -88,6 +88,19 @@ body{
     margin-right: 50px;
 }
 
+.top-menu-list .nav-link{
+    display: inherit;
+    padding: 0;
+}
+
+.list-group-horizontal-sm .list-group-item{
+    margin-bottom: auto;
+}
+
+.dropdown-toggle::after{
+    border-top: none !important;
+    margin-left: 0;
+}
 
 /**************************
     Storys
@@ -245,6 +258,7 @@ body{
 
 .suggestions-title{
     margin-top: 35px;
+    margin-bottom: 25px;
 }
 
 .table img {
