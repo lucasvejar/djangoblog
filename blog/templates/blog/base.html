@@ -74,9 +74,7 @@
                 <div class="sugestion-list">
                   <table class="table table-sm" style="border: none;">
                     <tbody>
-                 <!-- <ul class=" list-group"> -->
                     {% for user in users %}
-                    <!--<li class="suggestions-list-item list-group-item d-flex justify-content-between align-items-center"> -->
                       <tr>
                         <td colspan="1" class="img-table">
                           <img src="{% static user.profile_img %}" class="user-profile-pic" >
@@ -93,20 +91,9 @@
                           <small><a href="{% url 'blog:home' %}" class="link-follow text-decoration-none" ><b>Follow</b></a></small>
                         </td>
                       </tr>
-                    <!--  <div class="row suggestion-row">
-                        <div class="col" style="background-color: red;">
-                          <img src="{% static user.profile_img %}" class="user-profile-pic" >
-                        </div>
-                        <div class="col suggestion-user-name"> {{user.user_name}} </div>
-                        <div class="col" style="background-color: yellow;">
-                          <a href="{% url 'blog:home' %}" class="text-decoration-none" >Follow</a>
-                        </div>
-                      </div> -->
-                   <!-- </li>  -->
                     {% endfor %}
                    </tbody>
                   </table>
-                  <!-- </ul> -->
                 </div>
               </div>
             </div>

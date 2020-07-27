@@ -239,16 +239,6 @@ body{
     margin-top: 35px;
 }
 
-.sugestion-list{
-    background-color: rgba(var(--b3f,250,250,250),1);
-    margin-top: 15px;
-}
-
-.suggestions-list-item{
-    border: none;
-    background-color: rgba(var(--b3f,250,250,250),1);
-}
-
 .table img {
     width: 32px;
     height: 32px;
@@ -259,14 +249,6 @@ body{
     float: left;
 }
 
-.sugestion-list .list-group-item{
-    padding: 0;
-}
-
-.sugestion-list .card-body{
-    padding: 7px 0px 10px 19px;
-}
-
 .settings-column{
     position: fixed;
     right: 5%;
@@ -274,28 +256,10 @@ body{
     height: auto;
 }
 
-.div-side-panel{
-    padding: 0;
-}
-
 .sub-title-user{
     font-size: medium;
 }
 
-.sub-suggestion-list{
-    margin-top: 0;
-    float: initial;
-}
-
-.suggestion-row{
-    margin: 0;
-    width: 100%;
-}
-
-.side-panel-list{
-    width: 100%;
-    display: flex;
-}
 
 .sugestion-list .table tr{
     border: none;
