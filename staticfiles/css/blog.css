@@ -132,6 +132,14 @@ body{
     margin-right: 5px;
 }
 
+.story-user-div{
+    width: 56px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
 .icons-post-list .list-group-item {
     border: none;
     padding: 2px 20px 0 0;
