@@ -40,11 +40,11 @@
               <li class="icon-list list-group-item nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><img class="top-user-img rounded-circle" src="{% static user.profile_img %}" ></a>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                  <a class="dropdown-item" href="#"><i class="far fa-user-circle"></i> Profile</a>
+                  <a class="dropdown-item" href="#"><i class="far fa-bookmark"></i> Saved</a>
+                  <a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Settings</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Separated link</a>
+                  <a class="dropdown-item" href="{% url 'blog:logout' %}"><i class="fas fa-sign-out-alt"></i><b> Logout</b></a>
                 </div>
               </li> 
             </ul>
@@ -76,7 +76,7 @@
                 <div class="suggestions-title" >
 
                   <p class="card-text text-muted">
-                    <b>Suggestions For You</b>
+                    <b style="font-size: small;">Suggestions For You</b>
                     <a href="{% url 'blog:post_new' %}" class="see-all text-decoration-none" ><strong>Add post</strong></a>
                   </p>
                 </div>
