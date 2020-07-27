@@ -36,7 +36,15 @@
               <li class="icon-list list-group-item"><i class="far fa-map fa-lg"></i></li>
               <li class="icon-list list-group-item"><i class="far fa-paper-plane fa-lg"></i></li>
               <li class="icon-list list-group-item"><i class='far fa-compass fa-lg'></i></li>
-              <li class="icon-list list-group-item"><i class="far fa-heart fa-lg"></i></li> 
+              <li class="icon-list list-group-item nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="far fa-heart fa-lg"></i></a> 
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#"> some stuf</a>
+                  <a class="dropdown-item" href="#"> ascim</a>
+                  <a class="dropdown-item" href="#"> ojrfe </a>
+                  <a class="dropdown-item" href="#"> regewtuf</a>
+                </div>
+              </li>
               <li class="icon-list list-group-item nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><img class="top-user-img rounded-circle" src="{% static user.profile_img %}" ></a>
                 <div class="dropdown-menu">
@@ -76,7 +84,7 @@
                 <div class="suggestions-title" >
 
                   <p class="card-text text-muted">
-                    <b style="font-size: small;">Suggestions For You</b>
+                    <b style="font-size: medium;">Suggestions For You</b>
                     <a href="{% url 'blog:post_new' %}" class="see-all text-decoration-none" ><strong>Add post</strong></a>
                   </p>
                 </div>

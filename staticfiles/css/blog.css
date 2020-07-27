@@ -91,6 +91,7 @@ body{
 .top-menu-list .nav-link{
     display: inherit;
     padding: 0;
+    color: #000000;
 }
 
 .list-group-horizontal-sm .list-group-item{
