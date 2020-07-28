@@ -2,8 +2,37 @@
 {% load static %}
 
 
-{% block inbox %}
-    <div class="container-fluid">
-        okjeeeafe
+{% block content %}
+
+<div class="container">
+    <div class="position-inbox-div">
+        <div class="row inbox-div" >
+            <div class="col-4 col-md-4 col-sm-3 inbox-col-left">
+                <div class="card">
+                    <div class="card-header">
+                        Featured
+                    </div>
+                    <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-8 col-sm-9 inbox-col-right" >
+                <div class="card">
+                    <div class="card-header">
+                        Featured
+                    </div>
+                    <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-{% endblock inbox %}
+</div>
+
+{% endblock content %}

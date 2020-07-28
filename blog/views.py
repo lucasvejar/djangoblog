@@ -69,9 +69,9 @@ def home(request):
 
 
 def post_detail(request, pk):
-    #post ={} #Post.objects.get(id=pk) #get_object_or_404(request, pk=pk)
-    posts = Post.objects.filter(user=request.user.id).order_by('created_date')
-    return render(request, 'blog/post_detail.html', {'post': post})
+    user = CustomUser.objects.get(user=request.user.id)
+    posts = Post.objects.filter(id=pk).order_by('created_date')  #get_object_or_404(request, pk=pk)
+    return render(request, 'blog/post_detail.html', {'posts': posts,'user':user})
 
 
 def post_new(request):
@@ -89,6 +89,7 @@ def post_new(request):
 
 
 def post_edit(request, pk):
+    user = CustomUser.objects.get(user=request.user.id)
     post = get_object_or_404(Post, pk=pk)
     if request.method == 'POST':
         form = PostForm(request.POST, instance=post)
@@ -96,16 +97,16 @@ def post_edit(request, pk):
             post = form.save(commit=False)
             post.author = request.user
             post.save()
-            return redirect('blog:post_detail', pk=post.pk)
+            return redirect('blog:post_detail',pk=pk)
     else:
         form = PostForm(instance=post)
 
-    return render(request, 'blog/post_edit.html', {'form': form})
+    return render(request, 'blog/post_edit.html', {'form': form, 'user':user})
 
 def inbox(request):
-    content = {}
-    return render(request,'blog/inbox.html',content)
+    user = CustomUser.objects.get(user=request.user.id)
+    return render(request,'blog/inbox.html',{'user':user})
 
 def trendingTopics(request):
-    content = {}
-    return render(request,'blog/trendingTopics.html',content)
+    user = CustomUser.objects.get(user=request.user.id)
+    return render(request,'blog/trendingTopics.html',{'user':user})

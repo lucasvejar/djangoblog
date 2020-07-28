@@ -210,6 +210,10 @@ body{
     margin-top: 8px;
 }
 
+.user-name a{
+    color: #000000;
+}
+
 .card{
     border: none;
 }
@@ -470,4 +474,50 @@ body{
 
 a:hover{
     color: #064d88;
+}
+
+
+
+
+/************************************
+    Inbox messages
+*********************************/
+
+.position-inbox-div{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center; 
+    text-align: center;
+}
+
+.inbox-div{
+    margin-top: 25px;
+    background-color: #ffffff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    max-width: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.inbox-col-left{
+    border-right: 1px solid rgba(0,0,0,.125);
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    max-width: 300px;
+}
+
+.inbox-col-right{
+    padding: 0;
+    max-width: 500px;
+    display: flex;
+    justify-content: flex-start;
+    height: 500px;
+}
+.inbox-col-right .card{
+    min-width: inherit;
 }
