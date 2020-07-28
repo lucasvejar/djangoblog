@@ -489,35 +489,37 @@ a:hover{
     display: flex;
     justify-content: center; 
     text-align: center;
+    margin-top: 25px;
 }
 
 .inbox-div{
-    margin-top: 25px;
     background-color: #ffffff;
     background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: .25rem;
-    max-width: auto;
+    border: 1px solid #ececec;
     display: flex;
-    justify-content: center;
+    justify-content: left;
 }
 
-.inbox-col-left{
-    border-right: 1px solid rgba(0,0,0,.125);
+.chat-list{
     padding: 0;
-    display: flex;
-    justify-content: center;
-    height: 500px;
-    max-width: 300px;
+    text-align: initial;
 }
 
-.inbox-col-right{
-    padding: 0;
-    max-width: 500px;
-    display: flex;
-    justify-content: flex-start;
-    height: 500px;
+.left-div{
+    border: 1px solid #ececec;
+    border-bottom-left-radius: .25rem;
+    border-top-left-radius: .25rem;
+    background-color: #ffffff;
 }
-.inbox-col-right .card{
-    min-width: inherit;
+
+.chat-list .list-group-item{
+    border: none;
+}
+
+.icon-inbox-h{
+    text-align: end;
+}
+
+.divider-top{
+    border-top: 1px solid #ececec !important;
 }
