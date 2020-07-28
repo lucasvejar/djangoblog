@@ -2,91 +2,150 @@
 {% load static %}
 
 {% block content %}
-<div class="card-post">
-    <div class="storys-list container-fluid">
-        <ul class="nav">
-            <li class="nav-item">
-                <div class="row justify-content-center">
-                    <div class="col">
-                        <img class="story" src="{% static user.profile_img %}">
+<div class="container-fluid">
+    <div class="row justify-content-between">
+        <div class="col">
+            <div class="card-deck">
+                <div class="card content">
+                    <div class="card-post">
+                        <div class="storys-list container-fluid">
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <div class="row justify-content-center">
+                                        <div class="col">
+                                            <img class="story" src="{% static user.profile_img %}">
+                                        </div>
+                                    </div>    
+                                    <div class="row justify-content-center">
+                                        <div class="col">
+                                            <small>{{ user.user_name }}</small>
+                                        </div>
+                                    </div>
+                                </li>
+                                {% for story in storys %}
+                                <li class="nav-item">
+                                    <div class="row justify-content-center">
+                                        <div class="col">
+                                            <img class="story" src="{% static story.story.img_path %}">
+                                        </div>
+                                    </div> 
+                                    <div class="row justify-content-center">
+                                        <div class="col story-user-div">
+                                            <small>{{ story.user.user_name }}</small>
+                                        </div>
+                                    </div>
+                                </li>  
+                                {% endfor %}
+                            </ul>
+                        </div> 
                     </div>
-                </div>    
-                <div class="row justify-content-center">
-                    <div class="col">
-                        <small>{{ user.user_name }}</small>
+                    {% for post in posts %}
+                    <div class="card-post">
+                        <div class="card-header">
+                            <img class="story-header" src="{% static post.user.profile_img %}">
+                            <h5 class="user-name"><b> {{ post.user.user_name }} </b></h5>
+                        </div>
+                        <img src="{% static post.post.img_path %}" class="card-img-top" alt="...">
+                        <div class="card-body post-card">
+                            <div class="icons container-fluid">
+                                <div class="container menu-items-list row">
+                                    <div class="col left-icons" >
+                                        <ul class="icons-post-list list-group list-group-horizontal">
+                                            <li class="list-group-item"><i class="icons-post-menu far fa-heart"></i></li>
+                                            <li class="list-group-item"><i class="icons-post-menu far fa-comment"></i></li>
+                                            <li class="list-group-item"><i class="icons-post-menu far fa-paper-plane"></i></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col right-icons" >
+                                        <i class="icons-post-menu far fa-bookmark"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-detail-body">
+                                <div class="post-description-header">
+                                    <div class="user-post-comment">
+                                        <b>{{ post.user.user_name }}</b>
+                                    </div>
+                                    <div class="post-description">
+                                        <p>{{ post.post.description|linebreaks }}</p>
+                                    </div>
+                                </div>
+                                {% for comment in post.comments %}
+                                <div class="comments-card">
+                                    <div class="comment-img">
+                                        <!-- uncomment the line below if you want to have the picture of the guy who commented -->
+                                        <!--
+                                        <img class="user-profile-pic" src="{% static post.user.profile_img %}">
+                                        -->
+                                        <b>{{ comment.user.user_name }}</b>
+                                    </div>
+                                    <div class="comment-content">
+                                        <p>{{ comment.comment.content }}</p>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="add-comment card-footer bg-transparent input-group">
+                            <input class="comment-input form-control" type="text" name="comments" placeholder="Add a comment...">
+                            <div class="comment-btn input-group-append">
+                                <a href='{% url "blog:post_detail" post.post.id %}' class="btn btn-sm btn-link"><b>Post</b></a>
+                            </div>
+                        </div>
                     </div>
+                    {% endfor %}  
+    
+    
                 </div>
-            </li>
-            {% for story in storys %}
-            <li class="nav-item">
-                <div class="row justify-content-center">
-                    <div class="col">
-                        <img class="story" src="{% static story.story.img_path %}">
-                    </div>
-                </div> 
-                <div class="row justify-content-center">
-                    <div class="col story-user-div">
-                        <small>{{ story.user.user_name }}</small>
-                    </div>
+            </div>
+        </div> 
+    
+        <div class="col">
+            <div class="settings-column">
+              <div class="side-panel card-body">
+                <div class="">
+                  <img class="user-profile-pic" src="{% static user.profile_img %}" >
+                  <h5 class="card-title user-title">
+                    <b>{{user.user_name}}</b>
+                    <p class="sub-title-user"><small class="text-muted">{{user.user}}</small></p>  
+                  </h5>
                 </div>
-            </li>  
-            {% endfor %}
-        </ul>
-    </div> 
+                <div class="suggestions-title" >
+    
+                  <p class="card-text text-muted">
+                    <b style="font-size: medium;">Suggestions For You</b>
+                    <a href="{% url 'blog:post_new' %}" class="see-all text-decoration-none" ><strong>Add post</strong></a>
+                  </p>
+                </div>
+                <div class="sugestion-list">
+                  <table class="table table-sm" style="border: none;">
+                    <tbody>
+                    {% for user in users %}
+                      <tr>
+                        <td colspan="1" class="img-table">
+                          <img src="{% static user.profile_img %}" class="user-profile-pic" >
+                        </td>
+                        <td colspan="2">
+                          <div class="suggestion-user-name">
+                            <h5 class="card-title user-title">
+                              <b>{{user.user_name}}</b>
+                              <p class="sub-title-user"><small class="text-muted">{{user.user}}</small></p>  
+                            </h5>
+                          </div>
+                        </td>
+                        <td class="link-table" colspan="1">
+                          <small><a href="{% url 'blog:home' %}" class="link-follow text-decoration-none" ><b>Follow</b></a></small>
+                        </td>
+                      </tr>
+                    {% endfor %}
+                   </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
 </div>
-{% for post in posts %}
-<div class="card-post">
-    <div class="card-header">
-        <img class="story-header" src="{% static post.user.profile_img %}">
-        <h5 class="user-name"><b> {{ post.user.user_name }} </b></h5>
-    </div>
-    <img src="{% static post.post.img_path %}" class="card-img-top" alt="...">
-    <div class="card-body post-card">
-        <div class="icons container-fluid">
-            <div class="container menu-items-list row">
-                <div class="col left-icons" >
-                    <ul class="icons-post-list list-group list-group-horizontal">
-                        <li class="list-group-item"><i class="icons-post-menu far fa-heart"></i></li>
-                        <li class="list-group-item"><i class="icons-post-menu far fa-comment"></i></li>
-                        <li class="list-group-item"><i class="icons-post-menu far fa-paper-plane"></i></li>
-                    </ul>
-                </div>
-                <div class="col right-icons" >
-                    <i class="icons-post-menu far fa-bookmark"></i>
-                </div>
-            </div>
-        </div>
-        <div class="post-detail-body">
-            <div class="post-description-header">
-                <div class="user-post-comment">
-                    <b>{{ post.user.user_name }}</b>
-                </div>
-                <div class="post-description">
-                    <p>{{ post.post.description|linebreaks }}</p>
-                </div>
-            </div>
-            {% for comment in post.comments %}
-            <div class="comments-card">
-                <div class="comment-img">
-                    <!-- uncomment the line below if you want to have the picture of the guy who commented -->
-                    <!--
-                    <img class="user-profile-pic" src="{% static post.user.profile_img %}">
-                    -->
-                    <b>{{ comment.user.user_name }}</b>
-                </div>
-                <div class="comment-content">
-                    <p>{{ comment.comment.content }}</p>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-    <div class="add-comment card-footer bg-transparent input-group">
-        <input class="comment-input form-control" type="text" name="comments" placeholder="Add a comment...">
-        <div class="comment-btn input-group-append">
-            <a href='{% url "blog:post_detail" post.post.id %}' class="btn btn-sm btn-link"><b>Post</b></a>
-        </div>
-    </div>
-</div>
-{% endfor %}  
+   
+
 {% endblock content %}

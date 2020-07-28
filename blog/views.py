@@ -102,3 +102,10 @@ def post_edit(request, pk):
 
     return render(request, 'blog/post_edit.html', {'form': form})
 
+def inbox(request):
+    content = {}
+    return render(request,'blog/inbox.html',content)
+
+def trendingTopics(request):
+    content = {}
+    return render(request,'blog/trendingTopics.html',content)

@@ -33,16 +33,16 @@
           </div>
           <div class="top-menu-list col nav" >
             <ul class="list-group list-group-horizontal-sm">
-              <li class="icon-list list-group-item"><i class="far fa-map fa-lg"></i></li>
-              <li class="icon-list list-group-item"><i class="far fa-paper-plane fa-lg"></i></li>
-              <li class="icon-list list-group-item"><i class='far fa-compass fa-lg'></i></li>
+              <li class="icon-list list-group-item"><a href="{% url 'blog:home' %}"><i class="fas fa-home fa-lg"></i></a></li>
+              <li class="icon-list list-group-item"><a href="{% url 'blog:inbox' %}"><i class="far fa-paper-plane fa-lg"></i></a></li>
+              <li class="icon-list list-group-item"><a href="{% url 'blog:trendingTopics' %}"><i class='far fa-compass fa-lg'></i></a></li>
               <li class="icon-list list-group-item nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="far fa-heart fa-lg"></i></a> 
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="#"> some stuf</a>
                   <a class="dropdown-item" href="#"> ascim</a>
                   <a class="dropdown-item" href="#"> ojrfe </a>
-                  <a class="dropdown-item" href="#"> regewtuf</a>
+                  <a class="dropdown-item" href="#"> regewtuf</a>...
                 </div>
               </li>
               <li class="icon-list list-group-item nav-item dropdown">
@@ -60,63 +60,9 @@
         </div>
       </div>
 
-      
-      <div class="container-fluid">
-        <div class="row justify-content-between">
-          <div class="col">
-            <div class="card-deck">
-              <div class="card content">
-                {% block content %}{% endblock content %}
-              </div>
-            </div>
-          </div>
-        
-          <div class="col">
-            <div class="settings-column">
-              <div class="side-panel card-body">
-                <div class="">
-                  <img class="user-profile-pic" src="{% static user.profile_img %}" >
-                  <h5 class="card-title user-title">
-                    <b>{{user.user_name}}</b>
-                    <p class="sub-title-user"><small class="text-muted">{{user.user}}</small></p>  
-                  </h5>
-                </div>
-                <div class="suggestions-title" >
-
-                  <p class="card-text text-muted">
-                    <b style="font-size: medium;">Suggestions For You</b>
-                    <a href="{% url 'blog:post_new' %}" class="see-all text-decoration-none" ><strong>Add post</strong></a>
-                  </p>
-                </div>
-                <div class="sugestion-list">
-                  <table class="table table-sm" style="border: none;">
-                    <tbody>
-                    {% for user in users %}
-                      <tr>
-                        <td colspan="1" class="img-table">
-                          <img src="{% static user.profile_img %}" class="user-profile-pic" >
-                        </td>
-                        <td colspan="2">
-                          <div class="suggestion-user-name">
-                            <h5 class="card-title user-title">
-                              <b>{{user.user_name}}</b>
-                              <p class="sub-title-user"><small class="text-muted">{{user.user}}</small></p>  
-                            </h5>
-                          </div>
-                        </td>
-                        <td class="link-table" colspan="1">
-                          <small><a href="{% url 'blog:home' %}" class="link-follow text-decoration-none" ><b>Follow</b></a></small>
-                        </td>
-                      </tr>
-                    {% endfor %}
-                   </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      {% block content %}{% endblock content %}
+      {% block inbox %}{% endblock inbox %}
+      {% block trending %}{% endblock trending %}
 
     </body>
 </html>
