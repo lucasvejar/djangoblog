@@ -105,7 +105,8 @@ def post_edit(request, pk):
 
 def inbox(request):
     user = CustomUser.objects.get(user=request.user.id)
-    return render(request,'blog/inbox.html',{'user':user})
+    users = CustomUser.objects.all() # these are supossed to be friends
+    return render(request,'blog/inbox.html',{'user':user,'users':users})
 
 def trendingTopics(request):
     user = CustomUser.objects.get(user=request.user.id)

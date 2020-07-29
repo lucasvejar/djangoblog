@@ -6,34 +6,62 @@
 
 <div class="container">
     <div class="position-inbox-div">
-        <div class="left-div container-fluid">
+        <div class="left-div container-fluid rounded-left">
             <div class="row divider-bot align-items-center">
                 <div class="col-sm-9 container-fluid">
                     <p class="text-center"><h6><b>Direct</b></h6></p>
                 </div>
                 <div class="col-sm-3 container-fluid icon-inbox-h">
-                    <i class="far fa-edit"></i>
+                    <button type="button" class="btn btn-link"><i class="far fa-edit"></i></button>
                 </div>
             </div>
             <div class="row">
                 <div class="chat-list container-fluid">
                     <ul class="list-group">
-                        <li class="list-group-item">Cras justo odio</li>
-                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                        <li class="list-group-item">Morbi leo risus</li>
-                        <li class="list-group-item">Porta ac consectetur ac</li>
-                        <li class="list-group-item">Vestibulum at eros</li>
-                      </ul>
+                        {% for user in users %}
+                        <li class="list-group-item">
+                            <img src="{% static user.profile_img %}" class="rounded-circle user-profile-pic" >
+                            <div class="suggestion-user-name">
+                                <h5 class="card-title user-title">
+                                  <b>{{user.user_name}}</b>
+                                  <p class="sub-title-user"><small class="text-muted">{{user.user}}</small></p>  
+                                </h5>
+                            </div>
+                        </li>
+                        {% endfor %}
+                        {% for user in users %}
+                        <li class="list-group-item">
+                            <img src="{% static user.profile_img %}" class="rounded-circle user-profile-pic" >
+                            <div class="suggestion-user-name">
+                                <h5 class="card-title user-title">
+                                  <b>{{user.user_name}}</b>
+                                  <p class="sub-title-user"><small class="text-muted">{{user.user}}</small></p>  
+                                </h5>
+                            </div>
+                        </li>
+                        {% endfor %}
+                        {% for user in users %}
+                        <li class="list-group-item">
+                            <img src="{% static user.profile_img %}" class="rounded-circle user-profile-pic" >
+                            <div class="suggestion-user-name">
+                                <h5 class="card-title user-title">
+                                  <b>{{user.user_name}}</b>
+                                  <p class="sub-title-user"><small class="text-muted">{{user.user}}</small></p>  
+                                </h5>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
         </div>
-        <div class="right-div container-fluid">
+        <div class="right-div container-fluid rounded-right">
             <div class="row divider-bot align-items-center">
                 <div class="col-sm-9 container-fluid">
-                    <p class="text-center"><h6><b>Username</b></h6></p>
+                    <p class="text-right"><h6><b>Username</b></h6></p>
                 </div>
                 <div class="col-sm-3 container-fluid icon-inbox-h">
-                    <i class="far fa-edit"></i>
+                    <button type="button" class="btn btn-link"><i class="fas fa-info-circle"></i></button>
                 </div>
             </div>
             <div class="row">
