@@ -510,6 +510,9 @@ a:hover{
     border-bottom-left-radius: .25rem;
     border-top-left-radius: .25rem;
     background-color: #ffffff;
+    max-width: 300px;
+    height: 550px;
+    margin-right: 0;
 }
 
 .chat-list .list-group-item{
@@ -520,6 +523,17 @@ a:hover{
     text-align: end;
 }
 
-.divider-top{
-    border-top: 1px solid #ececec !important;
+.divider-bot{
+    width: auto;
+    border-bottom: 1px solid #ececec !important;
+}
+
+.right-div{
+    height: 550px;
+    background-color: #ffffff;
+    border-right: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
+    border-top: 1px solid #ececec;
+    max-width: 600px;
+    margin-left: 0;
 }
