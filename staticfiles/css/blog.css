@@ -514,7 +514,7 @@ a:hover{
 }
 
 .chat-list .list-group{
-    max-height: 496px;
+    height: 496px;
     margin-bottom: 10px;
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
@@ -538,11 +538,6 @@ a:hover{
     text-align: end;
 }
 
-.divider-bot{
-    width: auto;
-    border-bottom: 1px solid #ececec !important;
-}
-
 .right-div{
     height: 550px;
     background-color: #ffffff;
@@ -551,4 +546,16 @@ a:hover{
     border-top: 1px solid #ececec;
     max-width: 600px;
     margin-left: 0;
+}
+
+.chat-panel{
+    min-height: 496px;
+}
+    
+.chat-screen{
+    min-height: 420px;
+}
+
+.message-bar{
+    height: 52px;
 }
