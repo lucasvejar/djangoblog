@@ -234,7 +234,7 @@ body{
 }
 
 .card-deck{
-   /* margin-left: 170px; */
+    margin-left: 170px;
 }
 
 
@@ -248,7 +248,7 @@ body{
     display: flex;
     justify-content: left;
     margin-left: 0px;
-    max-width: 200px;
+    max-width: 450px;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -290,7 +290,7 @@ body{
 
 .settings-column{
     position: fixed;
-    right: 2% !important;
+    right: 2%;
     min-width: 430px;
     height: auto;
 }
