@@ -234,7 +234,7 @@ body{
 }
 
 .card-deck{
-    margin-left: 170px;
+   /* margin-left: 170px; */
 }
 
 
@@ -247,7 +247,11 @@ body{
 .post-description{
     display: flex;
     justify-content: left;
-    margin-left: 0px; 
+    margin-left: 0px;
+    max-width: 200px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .user-post-comment{
@@ -286,7 +290,7 @@ body{
 
 .settings-column{
     position: fixed;
-    right: 5%;
+    right: 2% !important;
     min-width: 430px;
     height: auto;
 }
