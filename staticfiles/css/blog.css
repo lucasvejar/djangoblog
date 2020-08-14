@@ -154,14 +154,6 @@ body{
     margin-right: 5px;
 }
 
-.story-user-div{
-    width: 56px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-}
-
-
 .icons-post-list .list-group-item {
     border: none;
     padding: 2px 20px 0 0;
@@ -210,14 +202,6 @@ body{
     margin-top: 8px;
 }
 
-.user-name a{
-    color: #000000;
-}
-
-.card{
-    border: none;
-}
-
 .card-post{
     position: relative;
     min-width: 0;
@@ -234,7 +218,7 @@ body{
 }
 
 .card-deck{
-   /* margin-left: 170px; */
+    margin-left: 170px;
 }
 
 
@@ -244,15 +228,7 @@ body{
     margin-bottom: 3px;
 }
 
-.post-description{
-    display: flex;
-    justify-content: left;
-    margin-left: 0px;
-    max-width: 450px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-}
+
 
 .user-post-comment{
     float: left;
@@ -270,7 +246,6 @@ body{
 
 .see-all{
     float: inline-end;
-    color: #000000;
 }
 
 .suggestions-title{
@@ -562,4 +537,18 @@ a:hover{
 
 .message-bar{
     height: 52px;
+}
+
+
+/******************************************
+        Trending view CSS
+*******************************************/
+
+.story-card-feed-img{
+    width: 364px;
+    height: auto;
+}
+
+.footer{
+    margin: auto;
 }

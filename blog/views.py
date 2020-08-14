@@ -110,4 +110,5 @@ def inbox(request):
 
 def trendingTopics(request):
     user = CustomUser.objects.get(user=request.user.id)
-    return render(request,'blog/trendingTopics.html',{'user':user})
+    posts = Post.objects.all()
+    return render(request,'blog/trendingTopics.html',{'user':user, 'posts': posts})

@@ -3,11 +3,12 @@
 
 {% block content %}
 <div class="container">
+
     <div class="row justify-content-center">
 
         <div class="col-8 col-sm-8 col-xs-9 col-md-6 col-lg-8">
             <div class="card-deck">
-                <div class="card content">
+                <div class="card content border-0">
                     <div class="card-post">
                         <div class="storys-list container-fluid">
                             <ul class="nav">
@@ -19,7 +20,7 @@
                                     </div>    
                                     <div class="row justify-content-center">
                                         <div class="col">
-                                            <small>{{ user.user_name }}</small>
+                                            <small class="text-lowercase">{{ user.user_name }}</small>
                                         </div>
                                     </div>
                                 </li>
@@ -31,7 +32,7 @@
                                         </div>
                                     </div> 
                                     <div class="row justify-content-center">
-                                        <div class="col story-user-div">
+                                        <div class="col text-truncate" style="width: 56px;">
                                             <small>{{ story.user.user_name }}</small>
                                         </div>
                                     </div>
@@ -44,7 +45,7 @@
                     <div class="card-post">
                         <div class="card-header">
                             <img class="story-header" src="{% static post.user.profile_img %}">
-                            <h5 class="user-name"><b><a class="text-decoration-none" href="{% url 'blog:post_detail' post.post.id %}">{{ post.user.user_name }}</a></b></h5>
+                            <h5 class="user-name"><a class="text-dark text-decoration-none text-lowercase font-weight-bold" href="{% url 'blog:post_detail' post.post.id %}">{{ post.user.user_name }}</a></h5>
                         </div>
                         <img src="{% static post.post.img_path %}" class="card-img-top" alt="...">
                         <div class="card-body post-card">
@@ -65,11 +66,9 @@
                             <div class="post-detail-body">
                                 <div class="post-description-header">
                                     <div class="user-post-comment">
-                                        <b>{{ post.user.user_name }}</b>
+                                        <b class="text-lowercase">{{ post.user.user_name }}</b>            
                                     </div>
-                                    <div class="post-description">
-                                        <p>{{ post.post.description|linebreaks }}</p>
-                                    </div>
+                                    <p>{{ post.post.description|linebreaks }}</p>
                                 </div>
                                 {% for comment in post.comments %}
                                 <div class="comments-card">
@@ -112,10 +111,9 @@
                   </h5>
                 </div>
                 <div class="suggestions-title" >
-    
                   <p class="card-text text-muted">
                     <b style="font-size: medium;">Suggestions For You</b>
-                    <a href="{% url 'blog:post_new' %}" class="see-all text-decoration-none" ><strong>Add post</strong></a>
+                    <a href="{% url 'blog:post_new' %}" class="see-all text-decoration-none text-dark" ><strong>Add post</strong></a>
                   </p>
                 </div>
                 <div class="sugestion-list">
@@ -141,6 +139,12 @@
                     {% endfor %}
                    </tbody>
                   </table>
+                  <p class="font-weight-bold text-secondary text-center">
+                    <small>
+                      <i class="fas fa-info-circle"></i> 
+                      This site is not responsive yet! Be patient please. I'm working on it.
+                    </small>
+                  </p>
                 </div>
               </div>
             </div>
