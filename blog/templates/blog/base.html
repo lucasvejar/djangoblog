@@ -48,7 +48,7 @@
               <li class="icon-list list-group-item nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><img class="top-user-img rounded-circle" src="{% static user.profile_img %}" ></a>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#"><i class="far fa-user-circle"></i> Profile</a>
+                  <a class="dropdown-item" href="{% url 'blog:profile' %}"><i class="far fa-user-circle"></i> Profile</a>
                   <a class="dropdown-item" href="#"><i class="far fa-bookmark"></i> Saved</a>
                   <a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Settings</a>
                   <div class="dropdown-divider"></div>

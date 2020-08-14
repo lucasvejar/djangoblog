@@ -13,4 +13,5 @@ urlpatterns = [
     path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
     path('post/inbox',views.inbox, name='inbox'),
     path('post/trendingTopics', views.trendingTopics, name='trendingTopics'),
+    path('post/profile',views.profile, name='profile'),
 ]
