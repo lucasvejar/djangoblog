@@ -3,23 +3,47 @@
 
 
 {% block content %}
-    <div class="container" style="background-color: yellow;">
+    <div class="container py-md-5" style="background-color: yellow;">
         <div class="row justify-content-start">
             
-            <div class="row align-items-start justify-content-start" style="background-color: red;">
-                <div class="col-sm" style="background-color: aqua;">
+            <div class="container-fluid media">
+                <div class="container w-25">
                     <img class="profile-img-big rounded-circle" src="{% static user.profile_img %}">
                 </div>
-                <div class="col-sm-9 w-100" style="background-color: palevioletred;">
-                    {{user.description}}
+                <div class="media-body">
+                    <h5 class="mt-0 font-weight-bold">{{user.user_name}}</h5>
+                    {{user.biography}}
                 </div>
             </div>
-            <div class="row align-items-center" style="background-color: orange;">
-                <div class="col-sm">
-                    all the storys stored
-                </div>
-            </div>
-
+        
         </div>
+
+        <div class="row justify-content-start py-md-4" style="background-color: orange;">
+            <div class="container-fluid w-100">
+                <div class="card border-0">
+                    <div class="card-body">
+                        <div class="nav">
+                            {% for post in posts %}
+                            <li class="nav-item px-sm-3 px-md-4">
+                                <div class="row justify-content-center">
+                                    <div class="col">
+                                        <img class="profile-storys rounded-circle" src="{% static post.img_path %}" >
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col text-truncate" style="width: 56px;">
+                                        <small>{{post.description}}</small>
+                                    </div>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
     </div>
 {% endblock content %}
