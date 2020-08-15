@@ -117,4 +117,5 @@ def trendingTopics(request):
 def profile(request):
     user = CustomUser.objects.get(user=request.user.id)
     posts = Post.objects.filter(user=request.user.id)
-    return render(request,'blog/profile.html',{'user':user, 'posts': posts})
+    storys = Story.objects.filter(user=request.user.id)
+    return render(request,'blog/profile.html',{'user':user, 'posts': posts, 'storys':storys})
