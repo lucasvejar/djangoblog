@@ -118,4 +118,13 @@ def profile(request):
     user = CustomUser.objects.get(user=request.user.id)
     posts = Post.objects.filter(user=request.user.id)
     storys = Story.objects.filter(user=request.user.id)
-    return render(request,'blog/profile.html',{'user':user, 'posts': posts, 'storys':storys})
+    postsCount = len(posts)
+    return render(
+        request,
+        'blog/profile.html',
+        {
+            'user':user, 
+            'posts': posts, 
+            'storys':storys,
+            'postsCount': postsCount
+        })
