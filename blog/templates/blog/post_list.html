@@ -6,6 +6,7 @@
 
     <div class="row justify-content-center">
 
+        <!-- Storys and Feed -->
         <div class="col-8 col-sm-8 col-xs-9 col-md-6 col-lg-8">
             <div class="card-deck">
                 <div class="card content border-0">
@@ -15,7 +16,7 @@
                                 <li class="nav-item">
                                     <div class="row justify-content-center">
                                         <div class="col">
-                                            <img class="story" src="{% static user.profile_img %}">
+                                            <img class="story rounded-circle" src="{% static user.profile_img %}">
                                         </div>
                                     </div>    
                                     <div class="row justify-content-center">
@@ -63,7 +64,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="post-detail-body">
+                            <div class="mt-n3 p-0 container-fluid">
                                 <div class="post-description-header">
                                     <div class="user-post-comment">
                                         <b class="text-lowercase">{{ post.user.user_name }}</b>            
@@ -100,6 +101,7 @@
             </div>
         </div> 
     
+        <!-- Sidebar Main View -->
         <div class="col-4 col-sm col-xs col-md-6 col-lg-4">
             <div class="settings-column px-sm-3">
               <div class="side-panel card-body">
