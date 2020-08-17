@@ -9,12 +9,15 @@ class CustomUser(models.Model):
     user_name = models.CharField(max_length = 40)
     biography = models.CharField(max_length = 200)
     profile_img = models.CharField(max_length=200)
-    friend = models.ManyToManyField('CustomUser')
+    friends = models.ManyToManyField('CustomUser')
 
 
     def __str__(self):
         return self.user_name
 
+class UserFriends(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    date = models.DateTimeField(default=timezone.now)
 
 class Post(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
