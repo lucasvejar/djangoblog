@@ -10,10 +10,11 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Fake Instagram</title>
+        <title>My site</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" href="{% static 'css/modals.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'fontawesome/css/all.min.css' %}" />
         <link rel="icon" href="{% static 'img/igLogo' %}" type="image/jpeg">
     </head>
@@ -50,7 +51,9 @@
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="{% url 'blog:profile' %}"><i class="far fa-user-circle"></i> Profile</a>
                   <a class="dropdown-item" href="#"><i class="far fa-bookmark"></i> Saved</a>
-                  <a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Settings</a>
+                  <a class="dropdown-item" href="#"><i class="fas fa-cog"></i>                     
+                    Settings
+                  </a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="{% url 'blog:logout' %}"><i class="fas fa-sign-out-alt"></i><b> Logout</b></a>
                 </div>
@@ -59,6 +62,8 @@
           </div>
         </div>
       </div>
+
+    
 
       {% block content %}{% endblock content %}
 

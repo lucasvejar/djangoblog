@@ -1,0 +1,18 @@
+
+.modalSettings{
+    max-width: 386px !important;
+}
+
+.borders-top{
+    border-top-left-radius: 1.25rem !important;
+    border-top-right-radius: 1.25rem !important;
+}
+
+.borders-bot{
+    border-bottom-left-radius: 1.25rem !important;
+    border-bottom-right-radius: 1.25rem !important;
+}
+
+#newMessage .modal-footer .chat-list .list-group{
+    height: 176px;
+}
