@@ -533,15 +533,19 @@ a:hover{
     height: 52px;
 }
 
+
+/* Chat bar input and div and effects */
 .content-input{
-    background: rgba(242, 243, 247);
+    background: #fff;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 5px;
+    justify-content: flex-start;
+    padding: 3px;
     border-radius: 12px;
     position: relative;
-    width: 240px;
+    width: auto;
+    height: 40px;
+    margin: 16px;
 }
 
 .content-input input{
@@ -561,17 +565,25 @@ a:hover{
 }
 
 .content-input input:focus ~ .bg-content{
-    border: 2px solid #000;
+    border: 2px solid rgb(60, 166, 252);
 }
 
-.content-input input:focus ~ i{
-    transform: translate(0,-8px);
-    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, .15);
+.content-input input:focus ~ .col{
+    transform: translate(0,-4px);
+}
+
+.content-input input:focus {
+    transform: translate(0,-4px);
+}
+
+.content-input input:focus ~ i {
+    transform: translate(0,-4px);
+    box-shadow: 0px 8px 20px 0px transparent;
 }
 
 .content-input i.iconito {
     order: -1;
-    background: #fff;
+    background: transparent;
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -595,6 +607,13 @@ a:hover{
     box-sizing: border-box;
     border: 2px solid transparent;
     transition: all .25s ease;
+}
+
+/* end of the efects and stuf from the chat input */
+
+
+.chat-text{
+
 }
 
 
