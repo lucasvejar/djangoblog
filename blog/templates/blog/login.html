@@ -38,13 +38,13 @@
                             <div class="footer-register mx-auto">
                                 <p>You don't have an account? <a href="{% url 'blog:register' %}">Sign up</a></p>
                             </div>
-                            {% for message in messages %}
-                            <div class="alert alert-info" role="alert">
-                                {{message}}
-                            </div>
-                            {% endfor %}  
                         </div>
                     </form>
+                    {% for message in messages %}
+                        <div class="alert alert-success" role="alert">
+                            {{message}}
+                        </div>
+                    {% endfor %}  
                 </div>
                 <div class="divider"></div>
                 <div class="forgot-password mx-auto">

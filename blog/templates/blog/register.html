@@ -22,6 +22,11 @@
                 </div>
                 <div class="divider"></div>
                 <div class="center-block form-login">
+                    {% if form.errors %}
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            {{form.errors}}
+                        </div>
+                    {% endif %}
                     <form id="formu-register" method="POST" class="register">
                         {% csrf_token %}
                         {% for field in form %}
@@ -31,7 +36,7 @@
                                 </div>
                             </div>
                         {% endfor %}
-                            <div class="form-row aling-items-center">
+                            <div class="form-row aling-items-center">                                
                                 <div class="btn-register container">
                                     <button type="submit" class="btn btn-primary btn-sm btn-block">Sign up</button>
                                 </div>
@@ -39,12 +44,6 @@
                                     <p>Already have an account? <a href="{% url 'blog:login' %}">Log in</a></p>
                                 </div>  
                             </div>
-            
-                        {% if form.errors %}
-                        <div class="alert alert-info" role="alert">
-                            {{form.errors}}
-                        </div>
-                        {% endif %}
                     </form>
                 </div> 
             </div> 

@@ -4,11 +4,10 @@ from django.utils import timezone
 from .models import Post, Comment, CustomUser, Story
 from .forms import PostForm, CreateUserForm
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 # flash messages
 from django.contrib import messages
-
-
 
 
 
@@ -20,6 +19,12 @@ def registerUser(request):
         if form.is_valid():
             form.save()
             user = form.cleaned_data.get('username')
+            customUser = CustomUser()
+            customUser.user = User.objects.get(username=user)
+            customUser.user_name = user
+            customUser.biography = ""
+            customUser.profile_img = "/img/profiles/11.jpg"
+            customUser.save()
             messages.success(request,'Account created for '+user)
             return redirect('blog:login')
 
