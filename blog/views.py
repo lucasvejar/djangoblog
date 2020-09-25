@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.utils import timezone
 from .models import Post, Comment, CustomUser, Story
-from .forms import PostForm, CreateUserForm, CommentForm
+from .forms import PostForm, CreateUserForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 # flash messages
