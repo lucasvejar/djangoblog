@@ -420,7 +420,9 @@ body{
 .add-comment{
     display: flex;
     justify-content: flex-end;
-    padding: 10px;
+    padding: 4px;
+    margin-bottom: -14px;
+    align-items: center;
 }
 
 .comment-btn{
@@ -504,7 +506,7 @@ a:hover{
 }
 
 .btn-link{
-    color: #000000;
+    color: #030303;
 }
 
 .icon-inbox-h{
@@ -527,10 +529,6 @@ a:hover{
     
 .chat-screen{
     min-height: 420px;
-}
-
-.message-bar{
-    height: 52px;
 }
 
 
@@ -610,11 +608,6 @@ a:hover{
 }
 
 /* end of the efects and stuf from the chat input */
-
-
-.chat-text{
-
-}
 
 
 

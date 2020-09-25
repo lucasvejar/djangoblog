@@ -14,4 +14,5 @@ urlpatterns = [
     path('post/inbox',views.inbox, name='inbox'),
     path('post/trendingTopics', views.trendingTopics, name='trendingTopics'),
     path('post/profile',views.profile, name='profile'),
+    path('post/<int:pk>/makeComment',views.makeComment, name='makeComment'),
 ]

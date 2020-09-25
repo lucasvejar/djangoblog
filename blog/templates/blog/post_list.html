@@ -87,12 +87,14 @@
                                 {% endfor %}
                             </div>
                         </div>
+                        <form class="form inline-form" id="commentForm" method="POST" action="{% url 'blog:makeComment' post.post.id %}">{% csrf_token %}
                         <div class="add-comment card-footer bg-transparent input-group">
-                            <input class="comment-input form-control" type="text" name="comments" placeholder="Add a comment...">
+                            <input id="userComment" name="userComment" class="comment-input form-control" type="text" name="comments" placeholder="Add a comment...">
                             <div class="comment-btn input-group-append">
-                                <a href='{% url "blog:post_detail" post.post.id %}' class="btn btn-sm btn-link"><b>Post</b></a>
-                            </div>
+                                <button type="submit" class="btn btn-sm btn-link mb-2"><b>Post</b></button>
+                            </div>                  
                         </div>
+                        </form>
                     </div>
                     {% endfor %}  
     

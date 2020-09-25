@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.utils import timezone
 from .models import Post, Comment, CustomUser, Story
-from .forms import PostForm, CreateUserForm
+from .forms import PostForm, CreateUserForm, CommentForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 # flash messages
@@ -128,3 +128,17 @@ def profile(request):
             'storys':storys,
             'postsCount': postsCount
         })
+
+
+def makeComment(request, pk):
+    if request.method == 'POST':
+        post = Post.objects.get(id=pk)
+        comment = Comment()
+        comment.post = post
+        comment.users_who_commented = request.user
+        comment.content = request.POST.get('userComment')
+        comment.liked = 0
+        if comment.save():
+            return redirect('blog:home')
+        
+    return redirect('blog:home')
