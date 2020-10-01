@@ -1,0 +1,19 @@
+
+.login{
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    margin-top: 15rem;
+    padding: 30px;
+    max-width: 595px !important;
+    border: 1px solid #ececec;
+}
+
+.btnRow{
+    min-width: 330px;
+}
+
+.input-field{
+    max-width: 270px;
+}
