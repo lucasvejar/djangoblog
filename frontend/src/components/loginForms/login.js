@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container'
 import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Image from 'react-bootstrap/Image'
 import Button from 'react-bootstrap/Button'
 import './loginForm.css';
 
@@ -10,28 +11,36 @@ import './loginForm.css';
 export default class Login extends Component {
     render() {
         return (
-            <Container className="login border">
-                
+            <Container className="login border rounded-sm">
                 <Form className="form">
-                    <Row className="input-field p-2 ml-3">
+                    <div className="container text-center">
+                        <Image className="igLogo" src="./img/instagram.png"></Image>
+                    </div>
+                    <Row className="input-field p-2 ml-2 mr-2">
                         <Col className="">
                             <Form.Control className="input-field" placeholder="Username" />
                         </Col>
                     </Row>
-                    <Row className="input-field p-2 ml-3">
+                    <Row className="input-field p-2 ml-2 mr-2">
                         <Col>
                             <Form.Control className="input-field" type="password" placeholder="Password" />
                         </Col>
                     </Row>
-                    <Row className="p-0 mt-5 text-center">
-                        <Button className="btnRow" type='submit' variant="primary" size="sm" block>
-                            Log In
-                        </Button>
+                    <Row className="p-0 mt-4 text-center">
+                        <Col>
+                            <Button className="" type='submit' variant="primary" size="sm" block>
+                                Log In
+                            </Button>
+                            You don't have an account? <a className="link" href="#">Sign up</a>
+                        </Col>
+                        
                     </Row>
-                    <Row className="p-0">
-                        <p className="text-center">You don't have an account? <a className="link" href="#">Sign up</a></p>
-                    </Row>
+                    <div className="divider mt-3"></div>
+                    <div className="container forgotPsw text-center">
+                        <a href="#">Forgot password?</a>
+                    </div>
                 </Form>
+                
             </Container>
         )
     }

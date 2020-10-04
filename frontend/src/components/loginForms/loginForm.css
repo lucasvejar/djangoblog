@@ -4,16 +4,30 @@
     display: flex;
     justify-content: center;
     height: 100%;
-    margin-top: 15rem;
+    margin-top: 10rem;
     padding: 30px;
-    max-width: 595px !important;
+    max-width: 380px !important;
     border: 1px solid #ececec;
 }
 
-.btnRow{
-    min-width: 330px;
-}
 
 .input-field{
     max-width: 270px;
+}
+
+.divider{
+    margin: 30px;
+    border: solid 0.09px;
+    border-radius: 2px;
+    color:  #ececec;
+}
+
+.forgotPsw{
+    margin-top: 70px;
+}
+
+.igLogo{
+    display: inline-flex;
+    width: 175px;
+    height: 91px;
 }
